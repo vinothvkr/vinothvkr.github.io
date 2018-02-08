@@ -9,8 +9,10 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
 #Profile
-your-name: Vinoth Kumar Rajendran
-your-title: Web Developer (ASP.NET/MVC/C#)
+my_name: Vinoth Kumar Rajendran
+my_title: >- # Multiline Title
+  Web Developer (ASP.NET/MVC/C#)
+  <br>Hobbyist Android Enthusiasts
 
 # Social settings
 facebook_url: https://facebook.com/vinoobubbly
