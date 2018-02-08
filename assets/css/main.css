@@ -515,6 +515,10 @@
 				padding: 0.675em 0.5em;
 			}
 
+				ul.icons li a{
+					display: inline-block;
+				}
+
 			@media screen and (max-width: 480px) {
 
 				ul.icons li a:before {
