@@ -11,8 +11,7 @@ url: "" # the base hostname & protocol for your site
 #Profile
 my_name: Vinoth Kumar Rajendran
 my_title: >- # Multiline Title
-  Web Developer (ASP.NET/MVC/C#)
-  <br>Hobbyist Android Enthusiasts
+  Web Developer (ASP.NET/MVC/C#)<br>Hobbyist Android Enthusiasts
 
 # Social settings
 facebook_url: https://facebook.com/vinoobubbly
