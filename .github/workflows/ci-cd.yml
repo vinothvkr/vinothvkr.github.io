@@ -35,7 +35,6 @@ jobs:
       with:
         name: github-pages
         path: ./build
-        if-no-files-found: error
   
   deploy:
     needs: build
