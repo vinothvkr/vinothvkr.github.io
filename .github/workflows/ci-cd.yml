@@ -10,25 +10,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-    inputs:
-      name:
-        description: 'Artifact name'
-        required: false
-        default: 'github-pages'
-      path:
-        description: "Path of the directory containing the static assets."
-        required: true
-        default: "_site/"
-      retention-days:
-        description: "Duration after which artifact will expire in days."
-        required: false
-        default: "1"
-    outputs:
-      artifact_id:
-        description: "The ID of the artifact that was uploaded."
-        value: ${{ steps.upload-artifact.outputs.artifact-id }}
-  
+  build:  
     runs-on: ubuntu-latest
 
     strategy:
@@ -46,15 +28,13 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
     - run: yarn build
-    # - run: npm test
+    # - run: npm test          
 
     - name: Upload artifact
-      id: upload-artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        name: ${{ inputs.name }}
+        name: github-pages
         path: ./build
-        retention-days: ${{ inputs.retention-days }}
         if-no-files-found: error
   
   deploy:
