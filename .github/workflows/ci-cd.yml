@@ -8,7 +8,9 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  workflow_dispatch:
+
+jobs:
+  build:
     inputs:
       name:
         description: 'Artifact name'
@@ -26,10 +28,7 @@ on:
       artifact_id:
         description: "The ID of the artifact that was uploaded."
         value: ${{ steps.upload-artifact.outputs.artifact-id }}
-
-jobs:
-  build:
-
+  
     runs-on: ubuntu-latest
 
     strategy:
@@ -71,6 +70,6 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
