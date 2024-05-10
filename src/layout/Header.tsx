@@ -14,11 +14,12 @@ import {
   Toolbar,
   useTheme,
 } from '@mui/material';
-import Logo from '../components/logo/Logo';
-import useResponsive from '../hooks/useResponsive';
+import Logo from '@/components/logo/Logo';
+import useResponsive from '@/hooks/useResponsive';
 import { useState } from 'react';
 import { IconMenu2 } from '@tabler/icons-react';
 import { Link as RouterLink } from 'react-router-dom';
+import ThemeModeSwitch from '@/components/theme-mode-switch/ThemeModeSwitch';
 
 type Link = {
   title: string;
@@ -86,6 +87,9 @@ export default function Header() {
           >
             <Logo />
             <Box flexGrow="1" />
+            <Box sx={{ mr: { xs: 2, md: 0 } }}>
+              <ThemeModeSwitch />
+            </Box>
             {isDesktop && (
               <Stack direction="row" spacing={2}>
                 {links.map(item => (
@@ -108,7 +112,6 @@ export default function Header() {
                 aria-label="open drawer"
                 edge="start"
                 onClick={handleDrawerToggle}
-                sx={{ mr: 2 }}
               >
                 <IconMenu2 />
               </IconButton>

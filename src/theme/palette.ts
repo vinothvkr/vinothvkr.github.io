@@ -21,7 +21,7 @@ export default function palette(themeMode: 'light' | 'dark') {
     mode: 'dark',
     action: { disabledBackground: 'rgba(0, 0, 0, 0.12)' },
     background: {
-      default: 'var(--mui-palette-neutral-950)',
+      default: stormGrey[950],
       defaultChannel: '9 10 11',
       paper: 'var(--mui-palette-neutral-900)',
       level1: 'var(--mui-palette-neutral-800)',
@@ -67,9 +67,9 @@ export default function palette(themeMode: 'light' | 'dark') {
       contrastText: 'var(--mui-palette-common-black)',
     },
     text: {
-      primary: 'var(--mui-palette-neutral-100)',
+      primary: stormGrey[100],
       primaryChannel: '240 244 248',
-      secondary: 'var(--mui-palette-neutral-400)',
+      secondary: stormGrey[400],
       secondaryChannel: '159 166 173',
       disabled: 'var(--mui-palette-neutral-600)',
     },
@@ -133,9 +133,9 @@ export default function palette(themeMode: 'light' | 'dark') {
     text: {
       primary: nevada[900],
       primaryChannel: '33 38 54',
-      secondary: 'var(--mui-palette-neutral-500)',
+      secondary: stormGrey[500],
       secondaryChannel: '102 112 133',
-      disabled: 'var(--mui-palette-neutral-400)',
+      disabled: stormGrey[400],
     },
     warning: {
       ...california,

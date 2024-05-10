@@ -8,16 +8,10 @@ export default function Hero() {
         <Stack sx={{ height: 'inherit' }} justifyContent="center" alignItems="center" spacing={3}>
           <Avatar alt="Vinoth Kumar Rajendran" src="/avatar.jpg" sx={{ width: 200, height: 200 }} />
           <Stack alignItems="center">
-            <Typography variant="h3" component="h1" color="#1A2027" textAlign="center">
+            <Typography variant="h3" component="h1" textAlign="center">
               Vinoth Kumar Rajendran
             </Typography>
-            <Typography
-              variant="h5"
-              component="h2"
-              color="#1A2027"
-              textAlign="center"
-              sx={{ mt: 0 }}
-            >
+            <Typography variant="h5" component="h2" textAlign="center" sx={{ mt: 0 }}>
               Senior Software Engineer
             </Typography>
           </Stack>
