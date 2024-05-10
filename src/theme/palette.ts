@@ -17,80 +17,13 @@ declare module '@mui/material/styles/createPalette' {
 }
 
 export default function palette(themeMode: 'light' | 'dark') {
-  const dark = {
-    mode: 'dark',
-    action: { disabledBackground: 'rgba(0, 0, 0, 0.12)' },
-    background: {
-      default: stormGrey[950],
-      defaultChannel: '9 10 11',
-      paper: 'var(--mui-palette-neutral-900)',
-      level1: 'var(--mui-palette-neutral-800)',
-      level2: 'var(--mui-palette-neutral-700)',
-      level3: 'var(--mui-palette-neutral-600)',
-    },
-    common: { black: '#000000', white: '#ffffff' },
-    dividerChannel: '50 56 62',
-    error: {
-      ...redOrange,
-      light: redOrange[300],
-      main: redOrange[400],
-      dark: redOrange[500],
-      contrastText: 'var(--mui-palette-common-black)',
-    },
-    info: {
-      ...shakespeare,
-      light: shakespeare[300],
-      main: shakespeare[400],
-      dark: shakespeare[500],
-      contrastText: 'var(--mui-palette-common-black)',
-    },
-    neutral: { ...nevada },
-    primary: {
-      ...neonBlue,
-      light: neonBlue[300],
-      main: neonBlue[400],
-      dark: neonBlue[500],
-      contrastText: 'var(--mui-palette-common-black)',
-    },
-    secondary: {
-      ...nevada,
-      light: nevada[100],
-      main: nevada[200],
-      dark: nevada[300],
-      contrastText: 'var(--mui-palette-common-black)',
-    },
-    success: {
-      ...kepple,
-      light: kepple[300],
-      main: kepple[400],
-      dark: kepple[500],
-      contrastText: 'var(--mui-palette-common-black)',
-    },
-    text: {
-      primary: stormGrey[100],
-      primaryChannel: '240 244 248',
-      secondary: stormGrey[400],
-      secondaryChannel: '159 166 173',
-      disabled: 'var(--mui-palette-neutral-600)',
-    },
-    warning: {
-      ...california,
-      light: california[300],
-      main: california[400],
-      dark: california[500],
-      contrastText: 'var(--mui-palette-common-black)',
-    },
-  } as const;
   const light = {
     mode: 'light',
     action: { disabledBackground: 'rgba(0, 0, 0, 0.06)' },
     background: {
-      default: 'var(--mui-palette-common-white)',
-      defaultChannel: '255 255 255',
-      paper: 'var(--mui-palette-common-white)',
-      level1: 'var(--mui-palette-neutral-50)',
-      level2: 'var(--mui-palette-neutral-100)',
-      level3: 'var(--mui-palette-neutral-200)',
+      default: '#ffffff',
+      paper: '#ffffff',
+      neutral: stormGrey[200],
     },
     common: { black: '#000000', white: '#ffffff' },
     dividerChannel: '220 223 228',
@@ -143,6 +76,68 @@ export default function palette(themeMode: 'light' | 'dark') {
       main: california[500],
       dark: california[600],
       contrastText: 'var(--mui-palette-common-white)',
+    },
+  } as const;
+
+  const dark = {
+    mode: 'dark',
+    action: { disabledBackground: 'rgba(0, 0, 0, 0.12)' },
+    background: {
+      default: stormGrey[950],
+      paper: stormGrey[800],
+      neutral: stormGrey[500],
+    },
+    common: { black: '#000000', white: '#ffffff' },
+    dividerChannel: '50 56 62',
+    error: {
+      ...redOrange,
+      light: redOrange[300],
+      main: redOrange[400],
+      dark: redOrange[500],
+      contrastText: 'var(--mui-palette-common-black)',
+    },
+    info: {
+      ...shakespeare,
+      light: shakespeare[300],
+      main: shakespeare[400],
+      dark: shakespeare[500],
+      contrastText: 'var(--mui-palette-common-black)',
+    },
+    neutral: { ...nevada },
+    primary: {
+      ...neonBlue,
+      light: neonBlue[300],
+      main: neonBlue[400],
+      dark: neonBlue[500],
+      contrastText: 'var(--mui-palette-common-black)',
+    },
+    secondary: {
+      ...nevada,
+      light: nevada[100],
+      main: nevada[200],
+      dark: nevada[300],
+      contrastText: 'var(--mui-palette-common-black)',
+    },
+    success: {
+      ...kepple,
+      light: kepple[300],
+      main: kepple[400],
+      dark: kepple[500],
+      contrastText: 'var(--mui-palette-common-black)',
+    },
+    text: {
+      primary: stormGrey[100],
+      primaryChannel: '240 244 248',
+      secondary: stormGrey[400],
+      secondaryChannel: '159 166 173',
+      disabled: 'var(--mui-palette-neutral-600)',
+    },
+    warning: {
+      ...california,
+      light: california[300],
+      main: california[400],
+      dark: california[500],
+      contrastText: 'var(--mui-palette-common-black)',
     },
   } as const;
 
