@@ -59,7 +59,7 @@ export default function Header() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Logo />
+      <Logo sx={{ my: 1 }} />
       <Divider />
       <List>
         {links.map(item => (
@@ -80,7 +80,7 @@ export default function Header() {
 
   return (
     <>
-      <AppBar sx={{ backgroundColor: 'transparent', boxShadow: '0' }}>
+      <AppBar sx={{ backgroundColor: 'transparent', backgroundImage: 'none', boxShadow: '0' }}>
         <Toolbar>
           <Container
             sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
@@ -129,7 +129,7 @@ export default function Header() {
           }}
           sx={{
             '& .MuiDrawer-paper': {
-              backgroundColor: theme.palette.common.white,
+              backgroundColor: theme.palette.background.default,
               boxSizing: 'border-box',
               width: drawerWidth,
             },
