@@ -1,6 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
 import ThemeProvider from './theme';
-import Header from './layout/Header';
 import Router from './routes';
 import { SettingsProvider } from './components/settings/SettingsContext';
 
@@ -15,7 +14,6 @@ function App() {
     <BrowserRouter>
       <SettingsProvider>
         <ThemeProvider>
-          <Header />
           <Router />
         </ThemeProvider>
       </SettingsProvider>

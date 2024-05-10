@@ -15,11 +15,13 @@ import {
   useTheme,
 } from '@mui/material';
 import Logo from '@/components/logo/Logo';
-import useResponsive from '@/hooks/useResponsive';
 import { useState } from 'react';
 import { IconMenu2 } from '@tabler/icons-react';
 import { Link as RouterLink } from 'react-router-dom';
 import ThemeModeSwitch from '@/components/theme-mode-switch/ThemeModeSwitch';
+import useScreenDetector from '@/hooks/useScreenDetector';
+import useOffSetTop from '@/hooks/useOffSetTop';
+import { HEADER } from '@/config';
 
 type Link = {
   title: string;
@@ -49,7 +51,8 @@ const links: Link[] = [
 
 export default function Header() {
   const theme = useTheme();
-  const isDesktop = useResponsive('up', 'md');
+  const { isDesktop } = useScreenDetector();
+  const isOffset = useOffSetTop();
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -81,8 +84,28 @@ export default function Header() {
   return (
     <>
       <AppBar sx={{ backgroundColor: 'transparent', backgroundImage: 'none', boxShadow: '0' }}>
-        <Toolbar>
+        <Toolbar
+          disableGutters
+          sx={{
+            height: {
+              xs: HEADER.MOBILE,
+              md: HEADER.DESKTOP,
+            },
+            transition: theme.transitions.create(['height', 'background-color'], {
+              easing: theme.transitions.easing.easeInOut,
+              duration: theme.transitions.duration.shorter,
+            }),
+            ...(isOffset && {
+              // ...bgBlur({ color: theme.palette.background.default }),
+              backdropFilter: 'blur(6px)',
+              height: {
+                md: HEADER.DESKTOP - 20,
+              },
+            }),
+          }}
+        >
           <Container
+            maxWidth="xl"
             sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
           >
             <Logo />
