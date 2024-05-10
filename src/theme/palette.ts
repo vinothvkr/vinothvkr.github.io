@@ -29,7 +29,6 @@ export default function palette(themeMode: 'light' | 'dark') {
       level3: 'var(--mui-palette-neutral-600)',
     },
     common: { black: '#000000', white: '#ffffff' },
-    divider: 'var(--mui-palette-neutral-700)',
     dividerChannel: '50 56 62',
     error: {
       ...redOrange,
@@ -94,7 +93,6 @@ export default function palette(themeMode: 'light' | 'dark') {
       level3: 'var(--mui-palette-neutral-200)',
     },
     common: { black: '#000000', white: '#ffffff' },
-    divider: 'var(--mui-palette-neutral-200)',
     dividerChannel: '220 223 228',
     error: {
       ...redOrange,
