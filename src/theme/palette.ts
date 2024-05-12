@@ -47,7 +47,7 @@ export default function palette(themeMode: 'light' | 'dark') {
       light: neonBlue[400],
       main: neonBlue[500],
       dark: neonBlue[600],
-      contrastText: 'var(--mui-palette-common-white)',
+      contrastText: '#ffffff',
     },
     secondary: {
       ...nevada,
