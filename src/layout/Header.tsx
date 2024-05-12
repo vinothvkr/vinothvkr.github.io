@@ -130,12 +130,7 @@ export default function Header() {
               </Stack>
             )}
             {!isDesktop && (
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-              >
+              <IconButton aria-label="open drawer" edge="start" onClick={handleDrawerToggle}>
                 <IconMenu2 />
               </IconButton>
             )}
