@@ -11,7 +11,7 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import { IconBrandBlogger, IconBrandGithub, IconBrandX, IconMail } from '@tabler/icons-react';
+import { IconBrandBlogger, IconBrandGithub, IconBrandX } from '@tabler/icons-react';
 import { HashLink } from 'react-router-hash-link';
 
 export default function HomeHero() {
@@ -43,11 +43,6 @@ export default function HomeHero() {
                 </Typography>
               </Stack>
               <Stack direction="row" justifyContent={{ xs: 'center', md: 'inherit' }}>
-                <Tooltip title="Email">
-                  <IconButton href="mailto:vinothvkr@hotmail.com">
-                    <IconMail />
-                  </IconButton>
-                </Tooltip>
                 <Tooltip title="Blog">
                   <IconButton href="https://vinothvkr.com/blog" target="_blank">
                     <IconBrandBlogger />
