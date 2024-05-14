@@ -5,11 +5,17 @@ export default function HomeContact() {
   const theme = useTheme();
   return (
     <Container id="contact" maxWidth="xl">
-      <Box mt="10rem">
+      <Box mt="6rem">
         <Typography fontWeight="500" textAlign="center" variant="h3">
           Contact me
         </Typography>
-        <Stack direction="row" justifyContent="center" mt={5} spacing={2}>
+        <Stack
+          direction={{ xs: 'column', md: 'row' }}
+          alignItems={{ xs: 'center' }}
+          justifyContent={{ md: 'center' }}
+          mt={5}
+          spacing={2}
+        >
           <Button variant="contained" startIcon={<IconMail />} href="mailto:vinothvkr@hotmail.com">
             E-mail
           </Button>
