@@ -44,7 +44,7 @@ export default function HomeHero() {
               </Stack>
               <Stack direction="row" justifyContent={{ xs: 'center', md: 'inherit' }}>
                 <Tooltip title="Blog">
-                  <IconButton href="https://vinothvkr.com/blog" target="_blank">
+                  <IconButton href="/blog">
                     <IconBrandBlogger />
                   </IconButton>
                 </Tooltip>

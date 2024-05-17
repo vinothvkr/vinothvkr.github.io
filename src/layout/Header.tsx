@@ -23,31 +23,7 @@ import useScreenDetector from '@/hooks/useScreenDetector';
 import useOffSetTop from '@/hooks/useOffSetTop';
 import { HEADER } from '@/config';
 
-type Link = {
-  title: string;
-  path: string;
-  isExternal: boolean;
-};
-
 const drawerWidth = 240;
-
-const links: Link[] = [
-  {
-    title: 'Home',
-    path: '/',
-    isExternal: false,
-  },
-  {
-    title: 'About',
-    path: '/#',
-    isExternal: false,
-  },
-  {
-    title: 'Blog',
-    path: '/blog',
-    isExternal: true,
-  },
-];
 
 export default function Header() {
   const theme = useTheme();
@@ -65,18 +41,21 @@ export default function Header() {
       <Logo sx={{ my: 1 }} />
       <Divider />
       <List>
-        {links.map(item => (
-          <ListItem key={item.title} disablePadding>
-            <ListItemButton
-              sx={{ textAlign: 'center' }}
-              component={RouterLink}
-              to={item.path}
-              target={item.isExternal ? '_parent' : ''}
-            >
-              <ListItemText primary={item.title} sx={{ textTransform: 'uppercase' }} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem disablePadding>
+          <ListItemButton sx={{ textAlign: 'center' }} component={RouterLink} to="/">
+            <ListItemText primary="Home" sx={{ textTransform: 'uppercase' }} />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton sx={{ textAlign: 'center' }} component={RouterLink} to="/">
+            <ListItemText primary="About" sx={{ textTransform: 'uppercase' }} />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton sx={{ textAlign: 'center' }} href="/blog">
+            <ListItemText primary="Blog" sx={{ textTransform: 'uppercase' }} />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -115,18 +94,20 @@ export default function Header() {
             </Box>
             {isDesktop && (
               <Stack direction="row" spacing={2}>
-                {links.map(item => (
-                  <Button
-                    component={RouterLink}
-                    key={item.title}
-                    to={item.path}
-                    color="secondary"
-                    sx={{ textTransform: 'uppercase' }}
-                    target={item.isExternal ? '_parent' : ''}
-                  >
-                    {item.title}
-                  </Button>
-                ))}
+                <Button
+                  color="secondary"
+                  sx={{ textTransform: 'uppercase' }}
+                  component={RouterLink}
+                  to="/"
+                >
+                  Home
+                </Button>
+                <Button color="secondary" sx={{ textTransform: 'uppercase' }}>
+                  About
+                </Button>
+                <Button color="secondary" sx={{ textTransform: 'uppercase' }} href="/blog">
+                  Blog
+                </Button>
               </Stack>
             )}
             {!isDesktop && (
