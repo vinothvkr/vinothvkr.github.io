@@ -1,4 +1,4 @@
-import HeroImage from '@/assets/HeroImage';
+import HeroImage from '@/assets/Home/HeroImage';
 import useScreenDetector from '@/hooks/useScreenDetector';
 import {
   Box,
