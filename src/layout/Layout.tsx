@@ -2,6 +2,7 @@ import { Box, useTheme } from '@mui/material';
 import Header from './Header';
 import { Outlet } from 'react-router-dom';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import Footer from './Footer';
 
 export default function Layout() {
   const theme = useTheme();
@@ -40,6 +41,8 @@ export default function Layout() {
       >
         <Outlet />
       </Box>
+
+      <Footer />
     </Box>
   );
 }
