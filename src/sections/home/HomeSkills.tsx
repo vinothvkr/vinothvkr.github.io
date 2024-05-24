@@ -68,8 +68,8 @@ export default function HomeSkills() {
                 Full Stack Development
               </Typography>
               <Stack direction="row" spacing={3}>
-                {stacks.map(item => (
-                  <>{item}</>
+                {stacks.map((item, index) => (
+                  <Box key={index}>{item}</Box>
                 ))}
               </Stack>
               <List>
