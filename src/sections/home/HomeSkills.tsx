@@ -1,4 +1,6 @@
 import ProfessionImage from '@/assets/Home/SkillsImage';
+import MotionViewport from '@/components/animate/MotionViewport';
+import { varFade } from '@/components/animate/variants/fade';
 import {
   SiAngular,
   SiAngularHex,
@@ -34,6 +36,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { IconStarFilled } from '@tabler/icons-react';
+import { m } from 'framer-motion';
 
 const stacks = [
   <SiCsharp color={SiCsharpHex} size={64} />,
@@ -51,28 +54,36 @@ const stacks = [
 export default function HomeSkills() {
   const theme = useTheme();
   return (
-    <Container maxWidth="xl">
-      <Box>
-        <Box mt="3rem" mb="6rem">
+    <Container maxWidth="xl" component={MotionViewport}>
+      <Box mt="3rem" mb="6rem">
+        <m.div variants={varFade().inUp}>
           <Typography fontWeight="500" textAlign="center" variant="h2">
             What I do?
           </Typography>
-        </Box>
-        <Grid container spacing={10} sx={{ height: 1 }}>
-          <Grid item xs={12} md={6} sx={{ height: 1 }}>
-            <ProfessionImage alignContent="center" sx={{ height: 1 }} />
-          </Grid>
-          <Grid item xs={12} md={6} sx={{ height: 1 }}>
-            <Stack spacing={5}>
-              <Typography fontWeight="400" textAlign="center" variant="h3">
+        </m.div>
+      </Box>
+      <Grid container spacing={10}>
+        <Grid item xs={12} md={6}>
+          <m.div variants={varFade().inLeft}>
+            <ProfessionImage alignContent="center" />
+          </m.div>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Stack spacing={5}>
+            <m.div variants={varFade().inRight}>
+              <Typography fontWeight="400" variant="h3">
                 Full Stack Development
               </Typography>
+            </m.div>
+            <m.div variants={varFade({ durationIn: 1.5 }).inRight}>
               <Stack direction="row" spacing={3}>
                 {stacks.map((item, index) => (
                   <Box key={index}>{item}</Box>
                 ))}
               </Stack>
-              <List>
+            </m.div>
+            <List>
+              <m.div variants={varFade({ durationIn: 2 }).inRight}>
                 <ListItem>
                   <ListItemIcon>
                     <IconStarFilled color={theme.palette.warning.main} />
@@ -85,11 +96,11 @@ export default function HomeSkills() {
                   </ListItemIcon>
                   <ListItemText primary="Experience in developing responsive front end web application utilizing React/Angular/Knockout" />
                 </ListItem>
-              </List>
-            </Stack>
-          </Grid>
+              </m.div>
+            </List>
+          </Stack>
         </Grid>
-      </Box>
+      </Grid>
     </Container>
   );
 }

@@ -1,7 +1,7 @@
 import { Box, useTheme } from '@mui/material';
 import Header from './Header';
 import { Outlet } from 'react-router-dom';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { m, useScroll, useSpring } from 'framer-motion';
 import Footer from './Footer';
 
 export default function Layout() {
@@ -17,7 +17,7 @@ export default function Layout() {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', height: 1 }}>
-      <motion.div
+      <m.div
         style={{
           left: 0,
           position: 'fixed',
