@@ -1,4 +1,5 @@
 import HeroImage from '@/assets/Home/HeroImage';
+import { URLS } from '@/config';
 import useScreenDetector from '@/hooks/useScreenDetector';
 import {
   Box,
@@ -44,17 +45,17 @@ export default function HomeHero() {
               </Stack>
               <Stack direction="row" justifyContent={{ xs: 'center', md: 'inherit' }}>
                 <Tooltip title="Blog">
-                  <IconButton href="/blog">
+                  <IconButton href={URLS.BLOG}>
                     <IconBrandBlogger />
                   </IconButton>
                 </Tooltip>
                 <Tooltip title="Github">
-                  <IconButton href="https://github.com/vinothvkr" target="_blank">
+                  <IconButton href={URLS.GITHUB} target="_blank">
                     <IconBrandGithub />
                   </IconButton>
                 </Tooltip>
                 <Tooltip title="Twitter">
-                  <IconButton href="https://twitter.com/_vinothvkr" target="_blank">
+                  <IconButton href={URLS.TWITTER} target="_blank">
                     <IconBrandX />
                   </IconButton>
                 </Tooltip>

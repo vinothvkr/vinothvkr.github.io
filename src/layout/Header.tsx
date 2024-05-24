@@ -21,7 +21,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import ThemeModeSwitch from '@/components/theme-mode-switch/ThemeModeSwitch';
 import useScreenDetector from '@/hooks/useScreenDetector';
 import useOffSetTop from '@/hooks/useOffSetTop';
-import { HEADER } from '@/config';
+import { HEADER, URLS } from '@/config';
 
 const drawerWidth = 240;
 
@@ -52,7 +52,7 @@ export default function Header() {
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton sx={{ textAlign: 'center' }} href="/blog">
+          <ListItemButton sx={{ textAlign: 'center' }} href={URLS.BLOG}>
             <ListItemText primary="Blog" sx={{ textTransform: 'uppercase' }} />
           </ListItemButton>
         </ListItem>
@@ -105,7 +105,7 @@ export default function Header() {
                 <Button color="secondary" sx={{ textTransform: 'uppercase' }}>
                   About
                 </Button>
-                <Button color="secondary" sx={{ textTransform: 'uppercase' }} href="/blog">
+                <Button color="secondary" sx={{ textTransform: 'uppercase' }} href={URLS.BLOG}>
                   Blog
                 </Button>
               </Stack>

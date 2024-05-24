@@ -1,3 +1,4 @@
+import { URLS } from '@/config';
 import { Box, Button, Container, Stack, Typography, useTheme } from '@mui/material';
 import { IconBrandGithub, IconBrandX, IconMail } from '@tabler/icons-react';
 
@@ -22,7 +23,7 @@ export default function HomeContact() {
           <Button
             variant="contained"
             startIcon={<IconBrandGithub />}
-            href="https://github.com/vinothvkr"
+            href={URLS.GITHUB}
             target="_blank"
             sx={{ backgroundColor: theme.palette.grey[800] }}
           >
@@ -31,7 +32,7 @@ export default function HomeContact() {
           <Button
             variant="contained"
             startIcon={<IconBrandX />}
-            href="https://twitter.com/_vinothvkr"
+            href={URLS.TWITTER}
             target="_blank"
             sx={{ backgroundColor: theme.palette.grey[800] }}
           >

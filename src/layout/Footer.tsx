@@ -1,3 +1,4 @@
+import { URLS } from '@/config';
 import { Box, Container, Link, Typography } from '@mui/material';
 
 export default function Footer() {
@@ -12,7 +13,7 @@ export default function Footer() {
     >
       <Container>
         <Typography component="div">
-          Made with ❤️ by <Link href="https://github.com/vinothvkr">@Vinoth Kumar Rajendran</Link>
+          Made with ❤️ by <Link href={URLS.GITHUB}>@Vinoth Kumar Rajendran</Link>
         </Typography>
       </Container>
     </Box>

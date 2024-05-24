@@ -35,12 +35,25 @@ import {
 } from '@mui/material';
 import { IconStarFilled } from '@tabler/icons-react';
 
+const stacks = [
+  <SiCsharp color={SiCsharpHex} size={64} />,
+  <SiDotnet color={SiDotnetHex} size={64} />,
+  <SiHtml5 color={SiHtml5Hex} size={64} />,
+  <SiCss3 color={SiCss3Hex} size={64} />,
+  <SiJavascript color={SiJavascriptHex} size={64} />,
+  <SiTypescript color={SiTypescriptHex} size={64} />,
+  <SiNodedotjs color={SiNodedotjsHex} size={64} />,
+  <SiReact color={SiReactHex} size={64} />,
+  <SiAngular color={SiAngularHex} size={64} />,
+  <SiMui color={SiMuiHex} size={64} />,
+];
+
 export default function HomeSkills() {
   const theme = useTheme();
   return (
     <Container maxWidth="xl">
       <Box>
-        <Box my="6rem">
+        <Box mt="3rem" mb="6rem">
           <Typography fontWeight="500" textAlign="center" variant="h2">
             What I do?
           </Typography>
@@ -55,16 +68,9 @@ export default function HomeSkills() {
                 Full Stack Development
               </Typography>
               <Stack direction="row" spacing={3}>
-                <SiCsharp color={SiCsharpHex} size={64} />
-                <SiDotnet color={SiDotnetHex} size={64} />
-                <SiHtml5 color={SiHtml5Hex} size={64} />
-                <SiCss3 color={SiCss3Hex} size={64} />
-                <SiJavascript color={SiJavascriptHex} size={64} />
-                <SiTypescript color={SiTypescriptHex} size={64} />
-                <SiNodedotjs color={SiNodedotjsHex} size={64} />
-                <SiReact color={SiReactHex} size={64} />
-                <SiAngular color={SiAngularHex} size={64} />
-                <SiMui color={SiMuiHex} size={64} />
+                {stacks.map(item => (
+                  <>{item}</>
+                ))}
               </Stack>
               <List>
                 <ListItem>
