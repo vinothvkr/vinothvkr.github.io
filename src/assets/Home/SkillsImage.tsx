@@ -1,9 +1,21 @@
 import { Box, BoxProps } from '@mui/material';
 
-export default function ProfessionImage({ ...other }: BoxProps) {
+export default function ProfessionImage({ sx, ...other }: BoxProps) {
   return (
-    <Box {...other}>
-      <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 829.13137 587.67633">
+    <Box
+      sx={{
+        display: 'inline-flex',
+        ...sx,
+      }}
+      {...other}
+    >
+      <svg
+        width="100%"
+        height="100%"
+        xmlns="http://www.w3.org/2000/svg"
+        data-name="Layer 1"
+        viewBox="0 0 829.13137 587.67633"
+      >
         <polygon
           points="85.757 572.858 99.518 572.857 106.065 519.775 85.754 519.776 85.757 572.858"
           fill="#ffb6b6"
