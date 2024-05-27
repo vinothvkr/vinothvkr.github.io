@@ -11,6 +11,8 @@ import {
   SiCsharpHex,
   SiCss3,
   SiCss3Hex,
+  SiDigitalocean,
+  SiDigitaloceanHex,
   SiDotnet,
   SiDotnetHex,
   SiGithubactions,
@@ -39,6 +41,7 @@ import {
   ListItemIcon,
   ListItemText,
   Stack,
+  Tooltip,
   Typography,
   useTheme,
 } from '@mui/material';
@@ -47,47 +50,48 @@ import { Slide } from 'react-awesome-reveal';
 
 const skills = [
   {
-    Title: 'Full Stack Development',
-    Image: (
+    title: 'Full Stack Development',
+    image: (
       <SkillsImage
         alignContent="center"
         justifyContent="center"
         sx={{ height: { xs: '300px', md: '500px' }, width: '100%' }}
       />
     ),
-    StackIcons: [
-      <SiCsharp color={SiCsharpHex} size={64} />,
-      <SiDotnet color={SiDotnetHex} size={64} />,
-      <SiHtml5 color={SiHtml5Hex} size={64} />,
-      <SiCss3 color={SiCss3Hex} size={64} />,
-      <SiJavascript color={SiJavascriptHex} size={64} />,
-      <SiTypescript color={SiTypescriptHex} size={64} />,
-      <SiNodedotjs color={SiNodedotjsHex} size={64} />,
-      <SiReact color={SiReactHex} size={64} />,
-      <SiAngular color={SiAngularHex} size={64} />,
-      <SiMui color={SiMuiHex} size={64} />,
+    stackIcons: [
+      { title: 'C#', icon: <SiCsharp color={SiCsharpHex} size={64} /> },
+      { title: '.Net', icon: <SiDotnet color={SiDotnetHex} size={64} /> },
+      { title: 'Html 5', icon: <SiHtml5 color={SiHtml5Hex} size={64} /> },
+      { title: 'CSS 3', icon: <SiCss3 color={SiCss3Hex} size={64} /> },
+      { title: 'JavaScript', icon: <SiJavascript color={SiJavascriptHex} size={64} /> },
+      { title: 'TypeScript', icon: <SiTypescript color={SiTypescriptHex} size={64} /> },
+      { title: 'Nodejs', icon: <SiNodedotjs color={SiNodedotjsHex} size={64} /> },
+      { title: 'React', icon: <SiReact color={SiReactHex} size={64} /> },
+      { title: 'Angular', icon: <SiAngular color={SiAngularHex} size={64} /> },
+      { title: 'MUI', icon: <SiMui color={SiMuiHex} size={64} /> },
     ],
-    Descriptions: [
+    descriptions: [
       'Extensive experience in building various types of Web Application with using C#, ASP.NET Core',
       'Experience in developing responsive front end web application utilizing React/Angular/Knockout',
     ],
   },
   {
-    Title: 'Cloud Architecture',
-    Image: (
+    title: 'Cloud Architecture',
+    image: (
       <CloudImage
         alignContent="center"
         justifyContent="center"
         sx={{ height: { xs: '300px', md: '500px' }, width: '100%' }}
       />
     ),
-    StackIcons: [
-      <SiAzuredevops color={SiAzuredevopsHex} size={64} />,
-      <SiGithubactions color={SiGithubactionsHex} size={64} />,
-      <SiAmazonaws color={SiAmazonawsHex} size={64} />,
-      <SiGooglecloud color={SiGooglecloudHex} size={64} />,
+    stackIcons: [
+      { title: 'Azure DevOps', icon: <SiAzuredevops color={SiAzuredevopsHex} size={64} /> },
+      { title: 'Digitalocean', icon: <SiDigitalocean color={SiDigitaloceanHex} size={64} /> },
+      { title: 'Github Actions', icon: <SiGithubactions color={SiGithubactionsHex} size={64} /> },
+      { title: 'AWS', icon: <SiAmazonaws color={SiAmazonawsHex} size={64} /> },
+      { title: 'Google Cloud', icon: <SiGooglecloud color={SiGooglecloudHex} size={64} /> },
     ],
-    Descriptions: [
+    descriptions: [
       'Designing and implementing cloud-native architectures, microservices, and serverless applications',
       'Experience in establishing and maintaining robust CI/CD pipelines for efficient and automated software delivery',
       'Experience in building github workflows',
@@ -111,7 +115,7 @@ export default function HomeSkills() {
           skills.map((skill, index) => (
             <Grid key={index} container spacing={1}>
               <Grid item xs={12} md={6}>
-                <Slide triggerOnce>{skill.Image}</Slide>
+                <Slide triggerOnce>{skill.image}</Slide>
               </Grid>
               <Grid item xs={12} md={6}>
                 <Stack spacing={5}>
@@ -121,7 +125,7 @@ export default function HomeSkills() {
                       variant="h3"
                       textAlign={{ xs: 'center', md: 'inherit' }}
                     >
-                      {skill.Title}
+                      {skill.title}
                     </Typography>
                   </Slide>
                   <Slide triggerOnce direction="right" duration={1200}>
@@ -132,13 +136,17 @@ export default function HomeSkills() {
                       flexWrap={{ xs: 'wrap', md: 'inherit' }}
                       justifyContent={{ xs: 'center', md: 'inherit' }}
                     >
-                      {skill.StackIcons}
+                      {skill.stackIcons?.map((icon, index) => (
+                        <Tooltip key={index} title={icon.title}>
+                          {icon.icon}
+                        </Tooltip>
+                      ))}
                     </Stack>
                   </Slide>
                   <Slide triggerOnce direction="right" duration={1500}>
                     <List>
-                      {skill.Descriptions &&
-                        skill.Descriptions.map((description, index) => (
+                      {skill.descriptions &&
+                        skill.descriptions.map((description, index) => (
                           <ListItem key={index}>
                             <ListItemIcon>
                               <IconStarFilled color={theme.palette.warning.main} />
