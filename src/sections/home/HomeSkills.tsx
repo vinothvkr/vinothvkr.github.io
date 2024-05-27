@@ -104,7 +104,7 @@ export default function HomeSkills() {
   return (
     <Container maxWidth="xl">
       <Box mt={3} mb={10}>
-        <Slide triggerOnce direction="up">
+        <Slide triggerOnce direction="down">
           <Typography fontWeight="500" textAlign="center" variant="h2">
             What I do?
           </Typography>
