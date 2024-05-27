@@ -12,17 +12,30 @@ import {
   useTheme,
 } from '@mui/material';
 import { IconBrandBlogger, IconBrandGithub, IconBrandX } from '@tabler/icons-react';
-import { Slide } from 'react-awesome-reveal';
+import Reveal from 'react-awesome-reveal';
 import { HashLink } from 'react-router-hash-link';
+import { keyframes } from '@emotion/react';
+
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+`;
 
 export default function HomeHero() {
   const theme = useTheme();
 
   return (
     <Container maxWidth="xl" sx={{ height: '100vh' }}>
-      <Grid container spacing={1} sx={{ height: 1 }}>
-        <Grid item xs={12} md={6} alignContent="center" sx={{ height: { md: 1 } }}>
-          <Slide triggerOnce direction="up" duration={1300}>
+      <Box component={Reveal} triggerOnce keyframes={customAnimation} sx={{ height: 1 }}>
+        <Grid container spacing={1} sx={{ height: 1 }}>
+          <Grid item xs={12} md={6} alignContent="center" sx={{ height: { md: 1 } }}>
             <Stack spacing={3}>
               <Stack spacing={3}>
                 <Typography
@@ -70,18 +83,16 @@ export default function HomeHero() {
                 </Button>
               </Box>
             </Stack>
-          </Slide>
-        </Grid>
-        <Grid item xs={12} md={6} alignContent={{ md: 'center' }} sx={{ height: { md: 1 } }}>
-          <Slide triggerOnce direction="up" duration={1300}>
+          </Grid>
+          <Grid item xs={12} md={6} alignContent={{ md: 'center' }} sx={{ height: { md: 1 } }}>
             <HeroImage
               alignContent="center"
               justifyContent="center"
               sx={{ height: { xs: '200px', md: '500px' }, width: '100%' }}
             />
-          </Slide>
+          </Grid>
         </Grid>
-      </Grid>
+      </Box>
     </Container>
   );
 }
