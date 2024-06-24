@@ -1,6 +1,8 @@
 import {
   SiDocker,
   SiDockerHex,
+  SiOpenwrt,
+  SiOpenwrtHex,
   SiPfsense,
   SiPfsenseHex,
   SiProxmox,
@@ -8,7 +10,7 @@ import {
   SiTruenas,
   SiTruenasHex,
 } from '@icons-pack/react-simple-icons';
-import { Box, Card, Container, Stack, Typography, useTheme } from '@mui/material';
+import { Box, Card, Container, Grid, Stack, Typography, useTheme } from '@mui/material';
 import { Slide } from 'react-awesome-reveal';
 
 export default function HomeHobby() {
@@ -19,6 +21,10 @@ export default function HomeHobby() {
       icon: (
         <SiPfsense color={theme.palette.mode === 'light' ? SiPfsenseHex : '#FFFFFF'} size={200} />
       ),
+    },
+    {
+      name: 'OpenWRT',
+      icon: <SiOpenwrt color={SiOpenwrtHex} size={200} />,
     },
     {
       name: 'Proxmox',
@@ -48,28 +54,21 @@ export default function HomeHobby() {
         </Slide>
       </Box>
       {/* Grid in the Box component */}
-      <Box
-        display="grid"
-        alignItems="center"
-        gridTemplateColumns={{
-          xs: 'repeat(1, 1fr)',
-          sm: 'repeat(2, 1fr)',
-          md: 'repeat(4, 1fr)',
-        }}
-        gap={{ xs: 3, lg: 10 }}
-      >
+      <Grid justifyContent="center" container spacing={{ xs: 3, lg: 10 }}>
         {services &&
           services.map((item, index) => (
-            <Slide key={index} triggerOnce direction="up">
-              <Card sx={{ px: '20px', py: '40px' }}>
-                <Box sx={{ width: '200px', height: '200px', margin: 'auto' }}>{item.icon}</Box>
-                <Typography component="h5" variant="h3" textAlign="center" sx={{ mt: 4 }}>
-                  {item.name}
-                </Typography>
-              </Card>
-            </Slide>
+            <Grid item xs={12} sm={6} md={3}>
+              <Slide key={index} triggerOnce direction="up">
+                <Card sx={{ px: '20px', py: '40px' }}>
+                  <Box sx={{ width: '200px', height: '200px', margin: 'auto' }}>{item.icon}</Box>
+                  <Typography component="h5" variant="h3" textAlign="center" sx={{ mt: 4 }}>
+                    {item.name}
+                  </Typography>
+                </Card>
+              </Slide>
+            </Grid>
           ))}
-      </Box>
+      </Grid>
     </Container>
   );
 }
