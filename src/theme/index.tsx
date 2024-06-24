@@ -8,6 +8,7 @@ import {
 import { useMemo } from 'react';
 import palette from './palette';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
+import componentsOverride from './overrides';
 
 type Props = {
   children: React.ReactNode;
@@ -25,6 +26,8 @@ export default function ThemeProvider({ children }: Props) {
   );
 
   const theme = createTheme(themeOptions);
+
+  theme.components = componentsOverride(theme);
 
   return (
     <StyledEngineProvider injectFirst>
