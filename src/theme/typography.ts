@@ -8,7 +8,10 @@ export function pxToRem(value: number) {
   return `${value / 16}rem`;
 }
 
+const FONT_FAMILY = 'Public Sans, sans-serif';
+
 const typography: TypographyOptions = {
+  fontFamily: FONT_FAMILY,
   button: {
     fontWeight: 700,
     lineHeight: 1.5,
