@@ -9,6 +9,7 @@ import { useMemo } from 'react';
 import palette from './palette';
 import { useSettingsContext } from '@/hooks/useSettingsContext';
 import componentsOverride from './overrides';
+import typography from './typography';
 
 type Props = {
   children: React.ReactNode;
@@ -20,6 +21,7 @@ export default function ThemeProvider({ children }: Props) {
   const themeOptions: ThemeOptions = useMemo(
     () => ({
       palette: palette(themeMode),
+      typography,
       shape: { borderRadius: 8 },
     }),
     [themeMode]
