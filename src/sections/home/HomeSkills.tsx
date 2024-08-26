@@ -1,8 +1,8 @@
 import CloudImage from '@/assets/Home/CloudImage';
 import SkillsImage from '@/assets/Home/SkillsImage';
 import {
-  SiAmazonaws,
-  SiAmazonawsHex,
+  SiAmazonwebservices,
+  SiAmazonwebservicesHex,
   SiAngular,
   SiAngularHex,
   SiAzuredevops,
@@ -88,7 +88,7 @@ const skills = [
       { title: 'Azure DevOps', icon: <SiAzuredevops color={SiAzuredevopsHex} size={64} /> },
       { title: 'Digitalocean', icon: <SiDigitalocean color={SiDigitaloceanHex} size={64} /> },
       { title: 'Github Actions', icon: <SiGithubactions color={SiGithubactionsHex} size={64} /> },
-      { title: 'AWS', icon: <SiAmazonaws color={SiAmazonawsHex} size={64} /> },
+      { title: 'AWS', icon: <SiAmazonwebservices color={SiAmazonwebservicesHex} size={64} /> },
       { title: 'Google Cloud', icon: <SiGooglecloud color={SiGooglecloudHex} size={64} /> },
     ],
     descriptions: [

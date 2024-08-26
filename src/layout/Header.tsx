@@ -103,7 +103,12 @@ export default function Header() {
                 >
                   Home
                 </Button>
-                <Button color="secondary" sx={{ textTransform: 'uppercase' }}>
+                <Button
+                  color="secondary"
+                  component={RouterLink}
+                  to="/about"
+                  sx={{ textTransform: 'uppercase' }}
+                >
                   About
                 </Button>
                 <Button color="secondary" sx={{ textTransform: 'uppercase' }} href={URLS.BLOG}>

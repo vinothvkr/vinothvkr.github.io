@@ -57,8 +57,8 @@ export default function HomeHobby() {
       <Grid justifyContent="center" container spacing={{ xs: 3, lg: 10 }}>
         {services &&
           services.map((item, index) => (
-            <Grid item xs={12} sm={6} md={3}>
-              <Slide key={index} triggerOnce direction="up">
+            <Grid item key={index} xs={12} sm={6} md={3}>
+              <Slide triggerOnce direction="up">
                 <Card sx={{ px: '20px', py: '40px' }}>
                   <Box sx={{ width: '200px', height: '200px', margin: 'auto' }}>{item.icon}</Box>
                   <Typography component="h5" variant="h3" textAlign="center" sx={{ mt: 4 }}>
