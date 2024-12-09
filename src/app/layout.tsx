@@ -30,7 +30,12 @@ export default function RootLayout({
             <NavBar />
             <div className="max-w-[100vw] px-6 pb-16 xl:pr-2">
               <div className="flex flex-col-reverse justify-between gap-6 xl:flex-row">
-                {children}
+                <div className="prose prose-sm md:prose-base w-full max-w-4xl flex-grow pt-10">
+                  {children}
+                </div>
+                <div>
+                  <aside className="sticky top-20 my-6 xl:mx-2 xl:my-0 xl:mt-32"></aside>
+                </div>
               </div>
             </div>
           </main>
