@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { getAllBlogPosts } from '@/utils/data';
 import { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
