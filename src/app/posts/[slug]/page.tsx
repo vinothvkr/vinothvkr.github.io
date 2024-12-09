@@ -3,6 +3,10 @@ import { getAllBlogPosts } from '@/utils/data';
 import { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
 export async function generateStaticParams() {
   const posts = getAllBlogPosts();
 
@@ -11,8 +15,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = getAllBlogPosts().find(x => x.slug === params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const slug = (await params).slug;
+  const post = getAllBlogPosts().find(x => x.slug === slug);
 
   return {
     title: `${post?.title} | Vinoth Kumar Rajendran`,
@@ -21,8 +26,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const post = getAllBlogPosts().find(x => x.slug === params.slug);
+export default async function Page({ params }: Props) {
+  const slug = (await params).slug;
+  const post = getAllBlogPosts().find(x => x.slug === slug);
 
   return (
     <>
