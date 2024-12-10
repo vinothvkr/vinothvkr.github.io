@@ -5,7 +5,7 @@ published: true
 title: Allow action method to be accessed only by anonymous user in Asp.Net Core MVC
 date: '2018-08-31 15:36:05 +0530'
 date_gmt: '2018-08-31 15:36:05 +0530'
-image: '/05/featured.jpg'
+image: '/05/featured.webp'
 category: Asp.Net Core
 tags:
   - Asp.Net Core

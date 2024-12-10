@@ -5,7 +5,7 @@ published: true
 title: Oxygen OS Oneplus 7T OTA Updates
 date: '2021-12-23 12:06:25 +0530'
 date_gmt: '2021-12-23 06:36:25 +0530'
-image: '/10/featured.jpg'
+image: '/10/featured.webp'
 category: Android
 tags:
   - Android

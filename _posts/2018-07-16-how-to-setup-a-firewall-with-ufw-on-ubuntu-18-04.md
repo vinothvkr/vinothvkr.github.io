@@ -5,7 +5,7 @@ published: true
 title: How to setup a Firewall with UFW on Ubuntu 20.04
 date: '2018-07-16 13:45:33 +0530'
 date_gmt: '2018-07-16 13:45:33 +0530'
-image: '/02/featured.jpg'
+image: '/02/featured.webp'
 category: Ubuntu
 tags:
   - Linux

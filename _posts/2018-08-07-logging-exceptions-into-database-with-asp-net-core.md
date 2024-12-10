@@ -5,7 +5,7 @@ published: true
 title: Logging Exceptions into Database with Asp.Net Core
 date: '2018-08-07 14:14:20 +0530'
 date_gmt: '2018-08-07 14:14:20 +0530'
-image: '/04/featured.jpg'
+image: '/04/featured.webp'
 category: Asp.Net Core
 tags:
   - Asp.Net Core

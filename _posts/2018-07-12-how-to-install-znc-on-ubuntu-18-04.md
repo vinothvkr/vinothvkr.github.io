@@ -5,7 +5,7 @@ published: true
 title: How to install ZNC on Ubuntu 18.04
 date: '2018-07-12 13:29:44 +0530'
 date_gmt: '2018-07-12 13:29:44 +0530'
-image: '/01/featured.jpg'
+image: '/01/featured.webp'
 category: Ubuntu
 tags:
   - Linux

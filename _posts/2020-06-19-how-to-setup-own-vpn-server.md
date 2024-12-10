@@ -5,7 +5,7 @@ published: true
 title: How to setup own VPN server
 date: '2020-06-19 11:13:13 +0530'
 date_gmt: '2020-06-19 11:13:13 +0530'
-image: '/07/featured.jpg'
+image: '/07/featured.webp'
 category: Ubuntu
 tags:
   - Linux

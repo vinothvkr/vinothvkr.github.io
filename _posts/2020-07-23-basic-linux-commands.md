@@ -5,7 +5,7 @@ published: true
 title: Basic Linux commands
 date: '2020-07-23 05:19:35 +0530'
 date_gmt: '2020-07-23 05:19:35 +0530'
-image: '/08/featured.jpg'
+image: '/08/featured.webp'
 category: Ubuntu
 tags:
   - Linux

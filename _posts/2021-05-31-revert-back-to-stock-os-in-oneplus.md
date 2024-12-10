@@ -5,7 +5,7 @@ published: true
 title: Revert back to stock OS in OnePlus
 date: '2021-05-31 12:06:25 +0530'
 date_gmt: '2021-05-31 06:36:25 +0530'
-image: '/09/featured.jpg'
+image: '/09/featured.webp'
 category: Android
 tags:
   - Android

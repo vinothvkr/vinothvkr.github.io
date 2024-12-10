@@ -5,7 +5,7 @@ published: true
 title: Enable submit button if at least one input has value
 date: '2018-07-26 13:52:24 +0530'
 date_gmt: '2018-07-26 13:52:24 +0530'
-image: '/03/featured.jpg'
+image: '/03/featured.webp'
 category: JQuery
 tags:
   - JavaScript

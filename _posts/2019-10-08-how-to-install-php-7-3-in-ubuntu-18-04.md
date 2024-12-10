@@ -5,7 +5,7 @@ published: true
 title: How to install PHP 7.3 in Ubuntu 18.04
 date: '2019-10-08 16:59:08 +0530'
 date_gmt: '2019-10-08 16:59:08 +0530'
-image: '/06/featured.jpg'
+image: '/06/featured.webp'
 category: Ubuntu
 tags:
   - Ubuntu
