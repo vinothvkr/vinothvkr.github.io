@@ -1,3 +1,5 @@
+import os from 'node:os';
+
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -38,7 +40,7 @@ export const getAllBlogPosts = (): Post[] => {
       category: data.category,
       tags: data.tags,
       excerpt: excerpt,
-      content: content,
+      content: getContentWithoutExcerpt(content, excerpt),
     };
     return post;
   });
@@ -48,4 +50,22 @@ export const getAllBlogPosts = (): Post[] => {
 
 export const getAllBlogPostsOrderedByDateDesc = (): Post[] => {
   return getAllBlogPosts().sort((a, b) => (a.date > b.date ? -1 : 1));
+};
+
+const getContentWithoutExcerpt = (content: string, excerpt?: string): string => {
+  if (excerpt) {
+    const excerptString = excerpt + '---';
+    if (content.startsWith(excerptString + os.EOL)) {
+      // with an os-specific newline after excerpt separator
+      content = content.slice((excerptString + os.EOL).length);
+    } else if (content.startsWith(excerptString + '\n')) {
+      // with a newline (\n) after excerpt separator
+      // This is necessary for some git configurations on windows
+      content = content.slice((excerptString + 1).length);
+    } else if (content.startsWith(excerptString)) {
+      // no newline after excerpt separator
+      content = content.slice(excerptString.length);
+    }
+  }
+  return content;
 };
