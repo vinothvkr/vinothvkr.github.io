@@ -8,7 +8,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="drawer-side">
+    <div className="drawer-side z-40">
       <label htmlFor="drawer" aria-label="close sidebar" className="drawer-overlay"></label>
       <aside className="bg-base-300 min-h-screen w-64">
         <div className="avatar mt-14 mb-5 mx-6 pl-5">
