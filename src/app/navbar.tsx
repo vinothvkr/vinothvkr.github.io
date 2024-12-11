@@ -9,11 +9,11 @@ export default function NavBar() {
           <label
             htmlFor="drawer"
             aria-label="open sidebar"
-            className="btn btn-square btn-ghost drawer-button lg:hidden"
+            className="btn btn-square btn-ghost drawer-button md:hidden"
           >
             <IconMenu2 />
           </label>
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-2 md:hidden">
             <Link className="text-2xl font-semibold" href="/">
               Vinoth Kumar Rajendran
             </Link>
