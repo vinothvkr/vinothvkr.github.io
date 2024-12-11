@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
-import { IconHome } from '@tabler/icons-react';
+import { URLS } from '@/config';
+import { IconBrandGithub, IconBrandX, IconHome } from '@tabler/icons-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -10,7 +11,7 @@ export default function Sidebar() {
   return (
     <div className="drawer-side z-40">
       <label htmlFor="drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-      <aside className="bg-base-300 min-h-screen w-64">
+      <aside className="bg-base-300 min-h-screen w-64 flex flex-col">
         <div className="avatar mt-14 mb-5 mx-6 pl-5">
           <div className="ring-primary ring-offset-base-100 w-28 rounded-full ring ring-offset-2">
             <img
@@ -23,7 +24,7 @@ export default function Sidebar() {
           <h1 className="text-2xl font-semibold">Vinoth Kumar Rajendran</h1>
           <p className="italic">Software Engineer | Homelab</p>
         </div>
-        <ul className="menu mx-4 mt-5">
+        <ul className="menu mx-4 mt-5 grow">
           <li>
             <Link className={pathname == '/' ? 'active' : ''} href="/">
               <IconHome />
@@ -31,6 +32,14 @@ export default function Sidebar() {
             </Link>
           </li>
         </ul>
+        <div className="flex flex-wrap gap-3 items-center w-100 mx-10 mb-10">
+          <Link className="link" href={URLS.GITHUB} target="_blank">
+            <IconBrandGithub />
+          </Link>
+          <Link href={URLS.TWITTER} target="_blank">
+            <IconBrandX />
+          </Link>
+        </div>
       </aside>
     </div>
   );
