@@ -36,7 +36,7 @@ export default async function Page({ params }: Props) {
         <article>
           <header>
             <h1 className="text-3xl mt-8 mb-6">{post.title}</h1>
-            <div className="text-xs">
+            <div className="text-sm">
               <span className="text-gray-500">Posted </span>
               <time>{post.dateFormatted}</time>
               <div className="my-3">
