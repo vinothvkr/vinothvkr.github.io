@@ -35,18 +35,22 @@ export default async function Page({ params }: Props) {
       {post && (
         <article>
           <header>
-            <h1>{post.title}</h1>
-            <div>
-              Posted <time>{post.dateFormatted}</time>
+            <h1 className="text-3xl mt-8 mb-6">{post.title}</h1>
+            <div className="text-xs">
+              <span className="text-gray-500">Posted </span>
+              <time>{post.dateFormatted}</time>
               <div className="my-3">
                 <img src={post.image} alt={post.title} />
               </div>
-              <div>By Vinoth</div>
+              <div>
+                <span className="text-gray-500">By </span> Vinoth
+              </div>
             </div>
           </header>
-          <div>
+          <div className="content mt-8">
             <MDXRemote source={post?.content} />
           </div>
+          <div className="post-tail mt-10"></div>
         </article>
       )}
     </>
