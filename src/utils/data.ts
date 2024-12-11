@@ -19,7 +19,7 @@ export type Post = {
   content: string;
 };
 
-export const getAllBlogPosts = () => {
+export const getAllBlogPosts = (): Post[] => {
   const allFiles = fs.readdirSync(dir);
   const allBlogs = allFiles.map(file => {
     const filePath = path.join(dir, file);
@@ -40,9 +40,12 @@ export const getAllBlogPosts = () => {
       excerpt: excerpt,
       content: content,
     };
-    debugger;
     return post;
   });
 
   return allBlogs.filter(x => x.published === true);
+};
+
+export const getAllBlogPostsOrderedByDateDesc = (): Post[] => {
+  return getAllBlogPosts().sort((a, b) => (a.date > b.date ? -1 : 1));
 };

@@ -1,8 +1,8 @@
 import BlogPostCard from '@/components/blog/postcard/PostCard';
-import { getAllBlogPosts } from '@/utils/data';
+import { getAllBlogPostsOrderedByDateDesc, Post } from '@/utils/data';
 
 export default function Home() {
-  const posts = getAllBlogPosts();
+  const posts: Post[] = getAllBlogPostsOrderedByDateDesc();
   return (
     <div className="flex flex-col space-y-5">
       {posts &&
