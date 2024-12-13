@@ -14,6 +14,10 @@ tags:
 
 UFW - Uncomplicated Firewall provides a user friendly way to create an IPv4 or IPv6 host-based firewall which helps a regular user to deny all incoming connections without much configuration.
 
+---
+
+UFW - Uncomplicated Firewall provides a user friendly way to create an IPv4 or IPv6 host-based firewall which helps a regular user to deny all incoming connections without much configuration.
+
 UFW comes with Ubuntu by default. In case it is not installed or removed for some reason, run the following command to install it:
 
 ```

@@ -17,6 +17,10 @@ tags:
 
 This guide shows how to restore the stock Oxygen OS from any custom ROM in OnePlus 7 and latest OnePlus devices. This may work in 7 and below version of devices. But this worked 100% in my 7T device and this how I reverted back my device.
 
+---
+
+This guide shows how to restore the stock Oxygen OS from any custom ROM in OnePlus 7 and latest OnePlus devices. This may work in 7 and below version of devices. But this worked 100% in my 7T device and this how I reverted back my device.
+
 **Important:** Please read through the instructions at least once before actually following them, so as to avoid any problems due to any missed steps. Also take the backup of your data.
 
 ## Preparation

@@ -13,6 +13,10 @@ tags:
   - Debian
 ---
 
+In this tutorial we will see how to install PHP version 7.3 in Ubuntu 18.04. Currently Ubuntu 18.04 support PHP version 7.2 officially in their repository.
+
+---
+
 In this tutorial we will see how to install PHP version 7.3 in Ubuntu 18.04. Currently Ubuntu 18.04 support PHP version 7.2 officially in their repository. There are some situation we are required to install version 7.3.x. For example Wordpress latest version required PHP 7.3 or above.
 
 Developer Ondřej Sur&yacute; maintain's the unsupported versions of PHP in [Launchpad](https://launchpad.net/~ondrej). Let's thanks for his work.

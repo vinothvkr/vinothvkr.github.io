@@ -12,6 +12,8 @@ type Post = {
 };
 
 export default function BlogPostCard({ slug, category, date, title, excerpt, image }: Post) {
+  const truncated_excerpt =
+    excerpt && excerpt.length > 128 ? `${excerpt?.slice(0, 128)}...` : excerpt;
   return (
     <article>
       <Link href={`/posts/${slug}`}>
@@ -21,14 +23,14 @@ export default function BlogPostCard({ slug, category, date, title, excerpt, ima
           </figure>
           <div className="card-body md:w-2/3">
             <h2 className="card-title font-normal">{title}</h2>
-            <p>{excerpt}</p>
-            <div className="card-actions justify-start space-x-4 text-sm">
+            <p className="mt-0 text-sm text-gray-500">{truncated_excerpt}</p>
+            <div className="card-actions justify-start space-x-4 text-sm text-gray-500">
               <div className="flex space-x-1">
-                <IconCalendar size={20} />
+                <IconCalendar size={16} />
                 <time>{date}</time>
               </div>
               <div className="flex space-x-1">
-                <IconFolder size={20} />
+                <IconFolder size={16} />
                 <span>{category}</span>
               </div>
             </div>

@@ -17,6 +17,10 @@ tags:
 
 This article has the update OTA links for OnePlus 7T.
 
+---
+
+This article has the update OTA links for OnePlus 7T.
+
 ### 11.0.5.1.HD65AA
 
 **INCREMENTAL**  

@@ -12,6 +12,10 @@ tags:
   - JQuery
 ---
 
+This tutorial will show you how to enable the submit button if you enter something into a text box, select drop down and check a check box.
+
+---
+
 There are some scenarios where submit button is enabled if at least one input has value. This tutorial will show you how to enable the submit button if you enter something into a text box, select drop down and check a check box.
 
 Let's have a simple Html form:

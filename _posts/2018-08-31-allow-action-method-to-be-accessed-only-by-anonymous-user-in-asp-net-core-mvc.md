@@ -15,6 +15,10 @@ tags:
 
 In this tutorial let's see how to allow a controller/action method to be accessed only by an anonymous user in Asp.Net Core MVC project.
 
+---
+
+In this tutorial let's see how to allow a controller/action method to be accessed only by an anonymous user in Asp.Net Core MVC project.
+
 In every project we globally restrict the application to access only authenticated users. But where ever requires `[AllowAnonymous]` attribute is used to allow anonymous access.
 
 In some scenario page should be accessed only to anonymous users and logged in users should not. In this case Asp.Net Core has no built in filter, so we are going to implement the custom filter attribute to do the magic.

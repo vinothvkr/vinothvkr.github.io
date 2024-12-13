@@ -13,6 +13,10 @@ tags:
   - OpenVPN
 ---
 
+In this tutorial we are using Ubuntu 20.04 server, so the steps shown below would work on almost all the Debian based linux distributions.
+
+---
+
 Today we are going to see how to setup our own VPN server. Here is a step by step guide to install and setup VPN server.
 
 **Prerequisites:**

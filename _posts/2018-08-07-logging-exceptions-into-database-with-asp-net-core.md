@@ -14,6 +14,10 @@ tags:
   - Asp.Net Core 2.2
 ---
 
+In this tutorial we are going to implement one of the method of database logger using Exception filter in Asp.Net core MVC project.
+
+---
+
 Each and every project requires exceptions to be logged in database. In this tutorial we are going to implement one of the method of database logger using Exception filter in Asp.Net core MVC project.
 
 First let's create LogEntry Model:
