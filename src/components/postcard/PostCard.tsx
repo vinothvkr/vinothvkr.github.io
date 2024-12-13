@@ -20,7 +20,7 @@ export default function BlogPostCard({ slug, category, date, title, excerpt, ima
             <img alt={title} src={image} />
           </figure>
           <div className="card-body md:w-2/3">
-            <h2 className="card-title">{title}</h2>
+            <h2 className="card-title font-normal">{title}</h2>
             <p>{excerpt}</p>
             <div className="card-actions justify-start space-x-4 text-sm">
               <div className="flex space-x-1">

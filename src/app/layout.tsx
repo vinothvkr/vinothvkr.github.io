@@ -4,6 +4,7 @@ import './globals.css';
 import Sidebar from './sidebar';
 import NavBar from './navbar';
 import RecentPosts from '@/components/recent-posts/RecentPosts';
+import { SITE } from '@/config';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -13,8 +14,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: 'Vinoth Kumar Rajendran',
-  description: 'Personal website of Vinoth Kumar Rajendran',
+  title: SITE.TITLE,
+  description: SITE.DESCRIPTION,
 };
 
 export default function RootLayout({
@@ -30,10 +31,18 @@ export default function RootLayout({
           <div className="drawer-content">
             <div className="container mx-auto px-4">
               <NavBar />
-              <div className="max-w-[100vw] px-6 pb-16 xl:pr-2">
+              <div className="max-w-[100vw] px-6 xl:pr-2">
                 <div className="flex gap-6 xl:flex-row">
                   <main className="prose prose-sm md:prose-base w-full max-w-4xl flex-grow 2xl:pr-16">
                     {children}
+                    <footer className="footer footer-center text-base-content p-4 mt-8 border-gray-700 border-t">
+                      <aside>
+                        <p>
+                          Copyright © {new Date().getFullYear()} {SITE.TITLE} - Some rights
+                          reserved.
+                        </p>
+                      </aside>
+                    </footer>
                   </main>
                   <aside className="sticky hidden xl:block top-20 my-6 xl:mx-2 xl:my-0 ">
                     <RecentPosts />

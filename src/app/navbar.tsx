@@ -1,3 +1,4 @@
+import { SITE } from '@/config';
 import { IconMenu2 } from '@tabler/icons-react';
 import Link from 'next/link';
 
@@ -15,7 +16,7 @@ export default function NavBar() {
           </label>
           <div className="flex items-center gap-2 md:hidden">
             <Link className="text-2xl font-semibold" href="/">
-              Vinoth Kumar Rajendran
+              {SITE.TITLE}
             </Link>
           </div>
         </div>

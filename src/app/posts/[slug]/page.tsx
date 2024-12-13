@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { SITE } from '@/config';
 import { getAllBlogPosts } from '@/utils/data';
 import { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getAllBlogPosts().find(x => x.slug === slug);
 
   return {
-    title: `${post?.title} | Vinoth Kumar Rajendran`,
+    title: `${post?.title} | ${SITE.TITLE}`,
     description: post?.excerpt?.trim(),
     keywords: post?.tags.toString(),
   };

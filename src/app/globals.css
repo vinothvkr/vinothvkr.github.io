@@ -45,3 +45,12 @@ p {
   margin-block-start: 1em;
   margin-block-end: 1em;
 }
+
+.content a {
+  @apply link-primary;
+  @apply link-hover;
+}
+
+.content a:hover {
+  @apply link-accent;
+}
