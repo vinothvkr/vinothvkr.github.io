@@ -3,6 +3,7 @@ import { Roboto } from 'next/font/google';
 import './globals.css';
 import Sidebar from './sidebar';
 import NavBar from './navbar';
+import RecentPosts from '@/components/recent-posts/RecentPosts';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -30,11 +31,13 @@ export default function RootLayout({
             <div className="container mx-auto px-4">
               <NavBar />
               <div className="max-w-[100vw] px-6 pb-16 xl:pr-2">
-                <div className="flex flex-col-reverse justify-between gap-6 xl:flex-row">
-                  <main className="prose prose-sm md:prose-base w-full max-w-3xl flex-grow">
+                <div className="flex gap-6 xl:flex-row">
+                  <main className="prose prose-sm md:prose-base w-full max-w-4xl flex-grow 2xl:pr-16">
                     {children}
                   </main>
-                  <aside className="sticky hidden xl:flex top-20 my-6 xl:mx-2 xl:my-0 xl:mt-32"></aside>
+                  <aside className="sticky hidden xl:block top-20 my-6 xl:mx-2 xl:my-0 ">
+                    <RecentPosts />
+                  </aside>
                 </div>
               </div>
             </div>

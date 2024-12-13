@@ -1,4 +1,4 @@
-import BlogPostCard from '@/components/blog/postcard/PostCard';
+import BlogPostCard from '@/components/postcard/PostCard';
 import { getAllBlogPostsOrderedByDateDesc, Post } from '@/utils/data';
 
 export default function Home() {
