@@ -1443,15 +1443,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:^4.12.20":
-  version: 4.12.20
-  resolution: "daisyui@npm:4.12.20"
+"daisyui@npm:^4.12.22":
+  version: 4.12.22
+  resolution: "daisyui@npm:4.12.22"
   dependencies:
     css-selector-tokenizer: "npm:^0.8"
     culori: "npm:^3"
     picocolors: "npm:^1"
     postcss-js: "npm:^4"
-  checksum: 10c0/067d89d481a7759e315862802f315e66a0e0a19eec04cd6b98de6993dd8462665d87ca885cc773af8a982f8875c495fca70945d85ed6ee2f39600beb8c194412
+  checksum: 10c0/93b6a9f574c7ee33abba279592a79276026478b0976091571d7fbb3f54bca9f9c900f2622161906dd81685c1ab77203a5aadc5f71ee63a4f4fa5e51f5bdebc09
   languageName: node
   linkType: hard
 
@@ -5590,7 +5590,7 @@ __metadata:
     "@types/node": "npm:^22.10.2"
     "@types/react": "npm:^19.0.1"
     "@types/react-dom": "npm:^19.0.2"
-    daisyui: "npm:^4.12.20"
+    daisyui: "npm:^4.12.22"
     date-fns: "npm:^4.1.0"
     eslint: "npm:^9.16.0"
     eslint-config-next: "npm:15.1.0"
