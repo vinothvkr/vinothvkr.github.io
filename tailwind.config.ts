@@ -19,9 +19,8 @@ export default {
     },
   },
   plugins: [daisyui],
-  daisyUi: {
-    themes: ['light', 'dark'],
-    darkTheme: 'dark',
-    themeRoot: ':root',
+  daisyui: {
+    themes: ['light', 'business'],
+    darkTheme: 'business',
   },
 } satisfies Config;
