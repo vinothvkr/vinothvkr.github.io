@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
+import ThemeSwitch from '@/components/theme-switch/ThemeSwitch';
 import { SITE, URLS } from '@/config';
 import { IconBrandGithub, IconBrandX, IconHome } from '@tabler/icons-react';
 import Link from 'next/link';
@@ -33,6 +34,7 @@ export default function Sidebar() {
           </li>
         </ul>
         <div className="flex flex-wrap gap-3 items-center w-100 mx-10 mb-10">
+          <ThemeSwitch />
           <Link className="link" href={URLS.GITHUB} target="_blank">
             <IconBrandGithub />
           </Link>
