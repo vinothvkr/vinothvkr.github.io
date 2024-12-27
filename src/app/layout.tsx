@@ -37,7 +37,7 @@ export default function RootLayout({
                   <div className="flex gap-1 xl:flex-row">
                     <main className="prose prose-sm md:prose-base w-full max-w-4xl flex-grow 2xl:pr-6">
                       {children}
-                      <footer className="footer footer-center text-base-content p-4 mt-8 border-t border-base-content/10">
+                      <footer className="footer footer-center text-base-content p-4 mt-8 border-t border-base-content/10 text-base-content/90">
                         <aside>
                           <p>
                             Copyright © {new Date().getFullYear()} {SITE.TITLE} - Some rights

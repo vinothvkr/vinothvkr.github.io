@@ -33,5 +33,6 @@
     "**/bower_components": true,
     "**/*.code-search": true,
     "**/.yarn": true
-  }
+  },
+  "git.confirmSync": false
 }
