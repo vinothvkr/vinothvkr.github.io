@@ -32,21 +32,21 @@ export function ThemeProvider({
     }
   }, []);
 
+  const getThemePreference = () => {
+    const theme = localStorage.getItem(cookieName);
+    if (theme === 'light') return 'light';
+    if (theme === 'dark') return 'dark';
+  };
+
+  const setThemePreference = (theme: 'light' | 'dark') => {
+    localStorage.setItem(cookieName, theme);
+    document.documentElement.setAttribute('data-theme', theme);
+    // document.documentElement.style.setProperty('color-scheme', theme);
+  };
+
   if (!mounted) {
     return <>Loading...</>;
   }
 
   return <ThemeContext.Provider value={{ theme, changeTheme }}>{children}</ThemeContext.Provider>;
 }
-
-const getThemePreference = () => {
-  const theme = localStorage.getItem(cookieName);
-  if (theme === 'light') return 'light';
-  if (theme === 'dark') return 'dark';
-};
-
-const setThemePreference = (theme: 'light' | 'dark') => {
-  localStorage.setItem(cookieName, theme);
-  document.documentElement.setAttribute('data-theme', theme);
-  // document.documentElement.style.setProperty('color-scheme', theme);
-};

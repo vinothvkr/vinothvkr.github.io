@@ -23,4 +23,5 @@ export default {
     themes: ['light', 'business'],
     darkTheme: 'business',
   },
+  darkMode: ['selector', '[data-theme="dark"]'],
 } satisfies Config;
