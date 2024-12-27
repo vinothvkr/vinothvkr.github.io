@@ -10,7 +10,10 @@ export default function RecentPosts() {
         {posts &&
           posts.map(post => (
             <li className="my-2" key={post.id}>
-              <Link href={post.slug} className="hover:link-primary link-hover text-sm truncate">
+              <Link
+                href={`/posts/${post.slug}`}
+                className="hover:link-primary link-hover text-sm truncate"
+              >
                 {post.title}
               </Link>
             </li>
