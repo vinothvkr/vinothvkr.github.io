@@ -30,14 +30,14 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="drawer md:drawer-open">
             <input id="drawer" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content">
+            <div className="drawer-content dark:bg-zinc-900">
               <div className="container mx-auto px-4">
                 <NavBar />
                 <div className="max-w-[100vw] px-6 xl:pr-2">
                   <div className="flex gap-1 xl:flex-row">
                     <main className="prose prose-sm md:prose-base w-full max-w-4xl flex-grow 2xl:pr-6">
                       {children}
-                      <footer className="footer footer-center text-base-content p-4 mt-8 border-gray-700 border-t">
+                      <footer className="footer footer-center text-base-content p-4 mt-8 border-t border-base-content/10">
                         <aside>
                           <p>
                             Copyright © {new Date().getFullYear()} {SITE.TITLE} - Some rights

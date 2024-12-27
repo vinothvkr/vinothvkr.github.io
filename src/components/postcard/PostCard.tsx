@@ -18,7 +18,7 @@ export default function BlogPostCard({ slug, category, date, title, excerpt, ima
   return (
     <article>
       <Link href={`/posts/${slug}`}>
-        <div className="card md:card-side bg-base-300 md:flex-row-reverse">
+        <div className="card border border-base-content/10 md:card-side dark:bg-base-200 shadow hover:bg-base-200 dark:hover:bg-base-100 md:flex-row-reverse">
           <figure className="md:w-2/5 md:rounded-tl-[unset] md:rounded-tr-[inherit] md:rounded-bl-[unset] md:rounded-br-[inherit]">
             <img alt={title} src={image} />
           </figure>

@@ -12,7 +12,7 @@ export default function Sidebar() {
   return (
     <div className="drawer-side z-40">
       <label htmlFor="drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-      <aside className="bg-base-300 min-h-screen w-64 flex flex-col">
+      <aside className="bg-base-200 min-h-screen w-64 flex flex-col">
         <div className="avatar mt-14 mb-5 mx-6 pl-5">
           <div className="ring-primary ring-offset-base-100 w-28 rounded-full ring ring-offset-2">
             <img
