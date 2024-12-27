@@ -48,5 +48,5 @@ const getThemePreference = () => {
 const setThemePreference = (theme: 'light' | 'dark') => {
   localStorage.setItem(cookieName, theme);
   document.documentElement.setAttribute('data-theme', theme);
-  document.documentElement.style.setProperty('color-scheme', theme);
+  // document.documentElement.style.setProperty('color-scheme', theme);
 };
