@@ -20,8 +20,7 @@ export default {
   },
   plugins: [daisyui],
   daisyui: {
-    themes: ['light', 'business'],
-    darkTheme: 'business',
+    themes: ['light', 'dark'],
   },
   darkMode: ['selector', '[data-theme="dark"]'],
 } satisfies Config;

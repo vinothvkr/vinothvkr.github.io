@@ -13,13 +13,7 @@ export default function ThemeSwitch() {
   return (
     <>
       <label className="swap swap-rotate">
-        <input
-          type="checkbox"
-          className="theme-controller"
-          value="dark"
-          checked={theme === 'dark'}
-          onChange={handleToggle}
-        />
+        <input type="checkbox" value="dark" checked={theme === 'dark'} onChange={handleToggle} />
         <IconMoon className="swap-off fill-current" />
         <IconSun className="swap-on fill-current" />
       </label>
