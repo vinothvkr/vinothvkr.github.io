@@ -1,6 +1,5 @@
 import { Post } from '@/utils/data';
 import PostCard from '../postcard/PostCard';
-import { truncatedWithDots } from '@/utils/text-utils';
 import Link from 'next/link';
 
 type RelatedPostsProps = {
@@ -38,9 +37,9 @@ export default function RelatedPosts({ post, posts }: RelatedPostsProps) {
                 <PostCard>
                   <div className="card-body p-5 h-44">
                     <time className="text-sm text-base-content/80">{post.dateFormatted}</time>
-                    <h4>{truncatedWithDots(post.title, 50)}</h4>
-                    <div className="mt-0 text-sm text-base-content/80">
-                      {post.excerpt && truncatedWithDots(post.excerpt, 65)}
+                    <h4 className="line-clamp-2">{post.title}</h4>
+                    <div className="mt-0 text-sm text-base-content/80 line-clamp-2">
+                      {post.excerpt}
                     </div>
                   </div>
                 </PostCard>
