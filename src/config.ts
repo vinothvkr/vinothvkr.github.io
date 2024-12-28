@@ -1,10 +1,10 @@
-export const SITE = {
-  TITLE: 'Vinoth Kumar Rajendran',
-  DESCRIPTION: 'Personal website of Vinoth Kumar Rajendran',
-  ABOUT_ME: 'Software Engineer | Homelab',
+import fs from 'fs';
+import { parse as yamlParse } from 'yaml';
+import { Config } from '@/types';
+
+const configParser = () => {
+  const file = fs.readFileSync(process.cwd() + '/app.config.yml', 'utf8');
+  return yamlParse(file) as Config;
 };
 
-export const URLS = {
-  GITHUB: 'https://github.com/vinothvkr',
-  TWITTER: 'https://twitter.com/_vinothvkr',
-};
+export const config = configParser();
