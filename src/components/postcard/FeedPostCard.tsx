@@ -22,7 +22,7 @@ export default function FeedPostCard({ slug, category, date, title, excerpt, ima
           </figure>
           <div className="card-body md:w-3/5">
             <h2 className="card-title font-normal line-clamp-2">{title}</h2>
-            <div className="mt-0 text-sm text-base-content/80 line-clamp-2">{excerpt}</div>
+            <div className="mt-0 text-sm text-base-content/80 line-clamp-2 mb-auto">{excerpt}</div>
             <div className="card-actions justify-start space-x-4 text-sm text-base-content/80">
               <div className="flex space-x-1">
                 <IconCalendar size={18} />
