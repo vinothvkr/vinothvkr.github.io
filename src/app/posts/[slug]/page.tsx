@@ -2,8 +2,20 @@
 import Comments from '@/components/comment/Comments';
 import { config } from '@/config';
 import { getAllBlogPosts } from '@/utils/data';
+import { IconFolder, IconTags } from '@tabler/icons-react';
 import { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import Link from 'next/link';
+
+type NavLinkEmptyProps = {
+  type: string;
+};
+
+type NavLinkProps = {
+  slug: string;
+  title: string;
+  type: string;
+};
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -28,9 +40,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function NavLink({ type, title, slug }: NavLinkProps) {
+  return (
+    <Link href={slug} className="join-item border flex-col py-5 px-2 hover:bg-primary">
+      <div className="uppercase text-xs">{type}</div>
+      <div>{title}</div>
+    </Link>
+  );
+}
+
+function NavLinkEmpty({ type }: NavLinkEmptyProps) {
+  return (
+    <button className="join-item border flex-col py-5 cursor-not-allowed">
+      <div className="uppercase">{type}</div>
+      <div>-</div>
+    </button>
+  );
+}
+
 export default async function Page({ params }: Props) {
   const slug = (await params).slug;
   const post = getAllBlogPosts().find(x => x.slug === slug);
+  const previousPost = post && getAllBlogPosts().find(x => x.id < post?.id);
+  const nextPost = post && getAllBlogPosts().find(x => x.id > post?.id);
 
   return (
     <>
@@ -52,7 +84,36 @@ export default async function Page({ params }: Props) {
           <div className="content mt-8">
             <MDXRemote source={post?.content} />
           </div>
-          <div className="post-tail mt-10"></div>
+          <div className="post-tail mt-10 text-gray-500 text-sm border-b">
+            <div className="flex space-x-1 mb-4">
+              <IconFolder size={18} />
+              <span>{post.category}</span>
+            </div>
+            <div className="flex space-x-1">
+              <IconTags size={18} />
+              {post.tags &&
+                post.tags.map(tag => (
+                  <span className="badge" key={tag}>
+                    {tag}
+                  </span>
+                ))}
+            </div>
+            <div className="mt-10 mb-5">
+              <span>
+                This post is licensed under{' '}
+                <Link href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</Link> by the
+                author
+              </span>
+            </div>
+          </div>
+          <div className="join grid grid-cols-2 my-10 text-center">
+            {(previousPost && (
+              <NavLink type="Previous" title={previousPost.title} slug={previousPost.slug} />
+            )) || <NavLinkEmpty type="Previous" />}
+            {(nextPost && <NavLink type="Next" title={nextPost.title} slug={nextPost.slug} />) || (
+              <NavLinkEmpty type="Next" />
+            )}
+          </div>
           <Comments config={config.comments} />
         </article>
       )}
