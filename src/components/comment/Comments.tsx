@@ -22,6 +22,7 @@ export default function Comments({ config }: CommentsProps) {
           lang={config.lang}
           reactionsEnabled={config.reactions_enabled}
           theme={theme}
+          loading={config.loading}
         />
       )}
     </>

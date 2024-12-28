@@ -19,6 +19,7 @@ export interface CommentConfig {
   input_position: 'top' | 'bottom';
   lang: string;
   reactions_enabled: '0' | '1';
+  loading: 'lazy' | 'eager';
 }
 
 export interface UseThemeProps {
