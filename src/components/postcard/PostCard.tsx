@@ -27,11 +27,11 @@ export default function BlogPostCard({ slug, category, date, title, excerpt, ima
             <p className="mt-0 text-sm text-base-content/80">{truncated_excerpt}</p>
             <div className="card-actions justify-start space-x-4 text-sm text-base-content/80">
               <div className="flex space-x-1">
-                <IconCalendar size={16} />
+                <IconCalendar size={18} />
                 <time>{date}</time>
               </div>
               <div className="flex space-x-1">
-                <IconFolder size={16} />
+                <IconFolder size={18} />
                 <span>{category}</span>
               </div>
             </div>
