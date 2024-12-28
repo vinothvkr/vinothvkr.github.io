@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Comments from '@/components/comment/Comments';
+import RelatedPosts from '@/components/releated-posts/RelatedPosts';
 import { config } from '@/config';
-import { getAllBlogPosts } from '@/utils/data';
+import { getAllBlogPosts, Post } from '@/utils/data';
 import { IconFolder, IconTags } from '@tabler/icons-react';
 import { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
@@ -59,10 +60,11 @@ function NavLinkEmpty({ type }: NavLinkEmptyProps) {
 }
 
 export default async function Page({ params }: Props) {
-  const slug = (await params).slug;
-  const post = getAllBlogPosts().find(x => x.slug === slug);
-  const previousPost = post && getAllBlogPosts().find(x => x.id < post?.id);
-  const nextPost = post && getAllBlogPosts().find(x => x.id > post?.id);
+  const slug: string = (await params).slug;
+  const posts: Post[] = getAllBlogPosts();
+  const post = posts.find(x => x.slug === slug);
+  const previousPost = post && posts.find(x => x.id < post?.id);
+  const nextPost = post && posts.find(x => x.id > post?.id);
 
   return (
     <>
@@ -114,6 +116,7 @@ export default async function Page({ params }: Props) {
               <NavLinkEmpty type="Next" />
             )}
           </div>
+          <RelatedPosts post={post} posts={posts} />
           <Comments config={config.comments} />
         </article>
       )}

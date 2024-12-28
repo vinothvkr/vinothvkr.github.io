@@ -19,6 +19,7 @@ export type Post = {
   tags: string[];
   excerpt?: string;
   content: string;
+  relevance: number;
 };
 
 export const getAllBlogPosts = (): Post[] => {
@@ -41,6 +42,7 @@ export const getAllBlogPosts = (): Post[] => {
       tags: data.tags,
       excerpt: excerpt,
       content: getContentWithoutExcerpt(content, excerpt),
+      relevance: 0,
     };
     return post;
   });

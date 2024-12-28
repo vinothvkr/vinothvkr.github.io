@@ -1,4 +1,4 @@
-import BlogPostCard from '@/components/postcard/PostCard';
+import FeedPostCard from '@/components/postcard/FeedPostCard';
 import { getAllBlogPostsOrderedByDateDesc, Post } from '@/utils/data';
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
     <div className="flex flex-col space-y-5">
       {posts &&
         posts.map(post => (
-          <BlogPostCard
+          <FeedPostCard
             key={post.id}
             slug={post.slug}
             category={post.category}
