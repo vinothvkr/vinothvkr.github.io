@@ -4,8 +4,8 @@ import './globals.css';
 import Sidebar from './sidebar';
 import NavBar from './navbar';
 import RecentPosts from '@/components/recent-posts/RecentPosts';
-import { SITE } from '@/config';
 import { ThemeProvider } from '@/ThemeContext';
+import { config } from '@/config';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -15,8 +15,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: SITE.TITLE,
-  description: SITE.DESCRIPTION,
+  title: config.title,
+  description: config.description,
 };
 
 export default function RootLayout({
@@ -40,7 +40,7 @@ export default function RootLayout({
                       <footer className="footer footer-center text-base-content p-4 mt-8 border-t border-base-content/10 text-base-content/90">
                         <aside>
                           <p>
-                            Copyright © {new Date().getFullYear()} {SITE.TITLE} - Some rights
+                            Copyright © {new Date().getFullYear()} {config.title} - Some rights
                             reserved.
                           </p>
                         </aside>
@@ -53,7 +53,7 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-            <Sidebar />
+            <Sidebar config={config} />
           </div>
         </ThemeProvider>
       </body>

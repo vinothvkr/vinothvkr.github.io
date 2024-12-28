@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { SITE } from '@/config';
+import Comments from '@/components/comment/Comments';
+import { config } from '@/config';
 import { getAllBlogPosts } from '@/utils/data';
 import { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getAllBlogPosts().find(x => x.slug === slug);
 
   return {
-    title: `${post?.title} | ${SITE.TITLE}`,
+    title: `${post?.title} | ${config.title}`,
     description: post?.excerpt?.trim(),
     keywords: post?.tags.toString(),
   };
@@ -52,6 +53,7 @@ export default async function Page({ params }: Props) {
             <MDXRemote source={post?.content} />
           </div>
           <div className="post-tail mt-10"></div>
+          <Comments config={config.comments} />
         </article>
       )}
     </>

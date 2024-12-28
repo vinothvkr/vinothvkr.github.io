@@ -1,4 +1,4 @@
-import { SITE } from '@/config';
+import { config } from '@/config';
 import { IconMenu2 } from '@tabler/icons-react';
 import Link from 'next/link';
 
@@ -16,7 +16,7 @@ export default function NavBar() {
           </label>
           <div className="flex items-center gap-2">
             <Link className="text-2xl font-semibold" href="/">
-              {SITE.TITLE}
+              {config.title}
             </Link>
           </div>
         </div>
