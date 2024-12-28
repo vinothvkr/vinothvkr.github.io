@@ -52,7 +52,7 @@ function NavLink({ type, title, slug }: NavLinkProps) {
 function NavLinkEmpty({ type }: NavLinkEmptyProps) {
   return (
     <button className="join-item border flex-col py-5 cursor-not-allowed">
-      <div className="uppercase">{type}</div>
+      <div className="uppercase text-xs">{type}</div>
       <div>-</div>
     </button>
   );
