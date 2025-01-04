@@ -1,8 +1,9 @@
-import { getAllBlogPostsOrderedByDateDesc, Post } from '@/utils/data';
+import { getAllBlogPostsOrderedByDateDesc } from '@/utils/data';
+import * as Types from '@/types';
 import Link from 'next/link';
 
 export default function RecentPosts() {
-  const posts: Post[] = getAllBlogPostsOrderedByDateDesc().slice(0, 5);
+  const posts: Types.Post[] = getAllBlogPostsOrderedByDateDesc().slice(0, 5);
   return (
     <section className="border-l border-base-content/10 pl-6">
       <h3 className="text-lg font-bold mb-2">Recent Posts</h3>

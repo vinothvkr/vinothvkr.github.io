@@ -1,10 +1,10 @@
-import { Post } from '@/utils/data';
 import PostCard from '../post-card/PostCard';
 import Link from 'next/link';
+import * as Types from '@/types';
 
 type RelatedPostsProps = {
-  post: Post;
-  posts: Post[];
+  post: Types.Post;
+  posts: Types.Post[];
 };
 
 export default function RelatedPosts({ post, posts }: RelatedPostsProps) {
