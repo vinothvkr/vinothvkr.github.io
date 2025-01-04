@@ -10,7 +10,7 @@ type SidebarProps = {
   config: Config;
 };
 
-export default function Sidebar({ config }: SidebarProps) {
+export default function SideDrawer({ config }: SidebarProps) {
   const pathname = usePathname();
 
   return (

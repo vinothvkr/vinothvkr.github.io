@@ -1,12 +1,6 @@
-export interface Config {
-  title: string;
-  description: string;
-  about_me: string;
-  social: {
-    github: string;
-    twitter: string;
-  };
-  comments: CommentConfig;
+export interface Breadcrumb {
+  name: string;
+  slug?: string;
 }
 
 export interface CommentConfig {
@@ -21,6 +15,32 @@ export interface CommentConfig {
   reactions_enabled: '0' | '1';
   loading: 'lazy' | 'eager';
 }
+
+export interface Config {
+  title: string;
+  description: string;
+  about_me: string;
+  social: {
+    github: string;
+    twitter: string;
+  };
+  comments: CommentConfig;
+}
+
+export type Post = {
+  id: number;
+  slug: string;
+  published: boolean;
+  title: string;
+  date: string;
+  dateFormatted: string;
+  image: string;
+  category: string;
+  tags: string[];
+  excerpt?: string;
+  content: string;
+  relevance: number;
+};
 
 export interface UseThemeProps {
   theme?: string;

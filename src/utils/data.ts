@@ -4,23 +4,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { format } from 'date-fns';
+import { Post } from '@/types';
 
 const dir = path.join(process.cwd(), '_posts');
-
-export type Post = {
-  id: number;
-  slug: string;
-  published: boolean;
-  title: string;
-  date: string;
-  dateFormatted: string;
-  image: string;
-  category: string;
-  tags: string[];
-  excerpt?: string;
-  content: string;
-  relevance: number;
-};
 
 export const getAllBlogPosts = (): Post[] => {
   const allFiles = fs.readdirSync(dir);

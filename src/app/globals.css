@@ -46,6 +46,18 @@ p {
   margin-block-end: 1em;
 }
 
+.content h1 {
+  @apply text-4xl;
+}
+
+.content h2 {
+  @apply text-3xl;
+}
+
+.content h3 {
+  @apply text-2xl;
+}
+
 .content a {
   @apply link-primary;
   @apply link-hover;
@@ -53,4 +65,24 @@ p {
 
 .content a:hover {
   @apply link-accent;
+}
+
+.content h1 a .icon.icon-link::before,
+.content h2 a .icon.icon-link::before,
+.content h3 a .icon.icon-link::before {
+  content: '#';
+  position: absolute;
+}
+
+.content h1 a .icon.icon-link,
+.content h2 a .icon.icon-link,
+.content h3 a .icon.icon-link {
+  opacity: 0;
+  @apply ml-1;
+}
+
+.content h1:hover a .icon.icon-link,
+.content h2:hover a .icon.icon-link,
+.content h3:hover a .icon.icon-link {
+  opacity: 1;
 }

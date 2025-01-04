@@ -1,22 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
-import Comments from '@/components/comment/Comments';
-import RelatedPosts from '@/components/releated-posts/RelatedPosts';
+import Main from '@/components/main/Main';
+import Post from '@/components/post/Post';
 import { config } from '@/config';
-import { getAllBlogPosts, Post } from '@/utils/data';
-import { IconFolder, IconTags } from '@tabler/icons-react';
+import * as Types from '@/types';
+import { getAllBlogPosts } from '@/utils/data';
+import { remark } from '@/utils/remark';
 import { Metadata } from 'next';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import Link from 'next/link';
-
-type NavLinkEmptyProps = {
-  type: string;
-};
-
-type NavLinkProps = {
-  slug: string;
-  title: string;
-  type: string;
-};
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -41,85 +29,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function NavLink({ type, title, slug }: NavLinkProps) {
-  return (
-    <Link href={slug} className="join-item border flex-col py-5 px-2 hover:bg-primary">
-      <div className="uppercase text-xs">{type}</div>
-      <div>{title}</div>
-    </Link>
-  );
-}
-
-function NavLinkEmpty({ type }: NavLinkEmptyProps) {
-  return (
-    <button className="join-item border flex-col py-5 cursor-not-allowed">
-      <div className="uppercase text-xs">{type}</div>
-      <div>-</div>
-    </button>
-  );
-}
-
 export default async function Page({ params }: Props) {
   const slug: string = (await params).slug;
-  const posts: Post[] = getAllBlogPosts();
+  const posts: Types.Post[] = getAllBlogPosts();
   const post = posts.find(x => x.slug === slug);
   const previousPost = post && posts.find(x => x.id < post?.id);
   const nextPost = post && posts.find(x => x.id > post?.id);
+  const breadcrumbs: Types.Breadcrumb[] = [{ name: 'Home', slug: '/' }];
+
+  if (post) {
+    breadcrumbs.push({ name: post.title });
+  }
+
+  const md = post && remark(post.content);
 
   return (
-    <>
+    <Main breadcrumbs={breadcrumbs}>
       {post && (
-        <article>
-          <header>
-            <h1 className="text-3xl mt-8 mb-6">{post.title}</h1>
-            <div className="text-sm">
-              <span className="text-gray-500">Posted </span>
-              <time>{post.dateFormatted}</time>
-              <div className="my-3">
-                <img src={post.image} alt={post.title} />
-              </div>
-              <div>
-                <span className="text-gray-500">By </span> Vinoth
-              </div>
-            </div>
-          </header>
-          <div className="content mt-8">
-            <MDXRemote source={post?.content} />
-          </div>
-          <div className="post-tail mt-10 text-gray-500 text-sm border-b">
-            <div className="flex space-x-1 mb-4">
-              <IconFolder size={18} />
-              <span>{post.category}</span>
-            </div>
-            <div className="flex space-x-1">
-              <IconTags size={18} />
-              {post.tags &&
-                post.tags.map(tag => (
-                  <span className="badge" key={tag}>
-                    {tag}
-                  </span>
-                ))}
-            </div>
-            <div className="mt-10 mb-5">
-              <span>
-                This post is licensed under{' '}
-                <Link href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</Link> by the
-                author
-              </span>
-            </div>
-          </div>
-          <div className="join grid grid-cols-2 my-10 text-center">
-            {(previousPost && (
-              <NavLink type="Previous" title={previousPost.title} slug={previousPost.slug} />
-            )) || <NavLinkEmpty type="Previous" />}
-            {(nextPost && <NavLink type="Next" title={nextPost.title} slug={nextPost.slug} />) || (
-              <NavLinkEmpty type="Next" />
-            )}
-          </div>
-          <RelatedPosts post={post} posts={posts} />
-          <Comments config={config.comments} />
-        </article>
+        <Post
+          post={post}
+          content={md?.markdown}
+          posts={posts}
+          nextPost={nextPost}
+          previousPost={previousPost}
+        />
       )}
-    </>
+    </Main>
   );
 }

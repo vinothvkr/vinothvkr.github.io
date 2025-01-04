@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { IconCalendar, IconFolder } from '@tabler/icons-react';
 import Link from 'next/link';
-import PostCard from './PostCard';
+import PostCard from '../post-card/PostCard';
 
 type Post = {
   slug: string;

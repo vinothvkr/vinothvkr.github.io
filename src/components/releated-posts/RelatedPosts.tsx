@@ -1,5 +1,5 @@
 import { Post } from '@/utils/data';
-import PostCard from '../postcard/PostCard';
+import PostCard from '../post-card/PostCard';
 import Link from 'next/link';
 
 type RelatedPostsProps = {
