@@ -1,7 +1,7 @@
 import FeedPostCard from '@/components/feed-post-card/FeedPostCard';
 import { getAllBlogPostsOrderedByDateDesc } from '@/utils/data';
 import * as Types from '@/types';
-import Main from '@/components/main/Main';
+import Main from '@/layout/Main';
 
 export default function Home() {
   const posts: Types.Post[] = getAllBlogPostsOrderedByDateDesc();

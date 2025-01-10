@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import { ThemeProvider } from '@/ThemeContext';
 import { config } from '@/config';
-import Drawer from '@/components/drawer/Drawer';
+import Drawer from '@/layout/Drawer';
 
 const roboto = Roboto({
   subsets: ['latin'],

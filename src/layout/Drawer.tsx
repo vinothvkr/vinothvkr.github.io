@@ -1,4 +1,4 @@
-import SideDrawer from '@/app/SideDrawer';
+import SideDrawer from '@/layout/SideDrawer';
 import { config } from '@/config';
 
 export default function Drawer({

@@ -1,4 +1,4 @@
-import Main from '@/components/main/Main';
+import Main from '@/layout/Main';
 import Post from '@/components/post/Post';
 import { config } from '@/config';
 import * as Types from '@/types';

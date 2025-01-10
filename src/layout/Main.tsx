@@ -1,8 +1,8 @@
 import { JSX } from 'react';
 import * as Types from '@/types';
-import NavBar from '@/app/navbar';
-import Footer from '@/components/footer/Footer';
-import Sidebar from '@/components/sidebar/Sidebar';
+import NavBar from '@/layout/navbar';
+import Footer from '@/layout/Footer';
+import Sidebar from '@/layout/Sidebar';
 
 export default function Main({
   children,
