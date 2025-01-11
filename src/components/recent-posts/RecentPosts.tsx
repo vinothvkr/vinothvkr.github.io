@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function RecentPosts() {
   const posts: Types.Post[] = getAllBlogPostsOrderedByDateDesc().slice(0, 5);
   return (
-    <section className="border-l border-base-content/10 pl-6">
+    <section className="border-l border-base-content/10 pl-6 mb-10">
       <h3 className="text-lg font-bold mb-2">Recent Posts</h3>
       <ul className="list-none">
         {posts &&
