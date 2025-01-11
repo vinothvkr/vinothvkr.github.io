@@ -33,7 +33,8 @@ export default async function Page({ params }: Props) {
   const slug: string = (await params).slug;
   const posts: Types.Post[] = getAllBlogPosts();
   const post = posts.find(x => x.slug === slug);
-  const previousPost = post && posts.find(x => x.id < post?.id);
+  const previousPost =
+    post && posts.sort((a, b) => (a.date > b.date ? -1 : 1)).find(x => x.id < post?.id);
   const nextPost = post && posts.find(x => x.id > post?.id);
   const breadcrumbs: Types.Breadcrumb[] = [{ name: 'Home', slug: '/' }];
 
