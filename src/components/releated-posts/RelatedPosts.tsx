@@ -29,7 +29,7 @@ export default function RelatedPosts({ post, posts }: RelatedPostsProps) {
   return (
     <div className="mt-5 mb-16">
       <h3 className="font-bold mb-6">Further Reading</h3>
-      <div className="grid grid-cols-3 gap-4 auto-cols-max">
+      <div className="grid gap-4 lg:grid-cols-3 lg:auto-cols-max">
         {sortedPosts &&
           sortedPosts.map(post => (
             <article key={post.id}>
