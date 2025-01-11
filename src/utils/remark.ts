@@ -34,7 +34,7 @@ export function remark(content: string): {
     passNode: true,
   });
 
-  const headings = toc(mdastTree);
+  const headings = toc(mdastTree, { tight: true });
 
   return {
     markdown,
