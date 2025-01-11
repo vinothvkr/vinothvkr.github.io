@@ -44,7 +44,7 @@ export default async function Page({ params }: Props) {
   const md = post && remark(post.content);
 
   return (
-    <Main breadcrumbs={breadcrumbs}>
+    <Main breadcrumbs={breadcrumbs} tableOfContents={md?.headings}>
       {post && (
         <Post
           post={post}

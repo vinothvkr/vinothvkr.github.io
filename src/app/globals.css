@@ -86,3 +86,11 @@ p {
 .content h3:hover a .icon.icon-link {
   opacity: 1;
 }
+
+.toc li {
+  @apply my-2;
+}
+
+.toc ul ul {
+  @apply ps-5;
+}

@@ -3,6 +3,7 @@ import * as Types from '@/types';
 import NavBar from '@/layout/navbar';
 import Footer from '@/layout/Footer';
 import Sidebar from '@/layout/Sidebar';
+import TableOfContent from '@/components/table-of-content/TableOfContent';
 
 export default function Main({
   children,
@@ -22,7 +23,7 @@ export default function Main({
             {children}
             <Footer />
           </main>
-          <Sidebar>{tableOfContents}</Sidebar>
+          <Sidebar>{tableOfContents && <TableOfContent headings={tableOfContents} />}</Sidebar>
         </div>
       </div>
     </>
