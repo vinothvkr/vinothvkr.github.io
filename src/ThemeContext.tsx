@@ -1,6 +1,7 @@
 'use client';
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { UseThemeProps } from './types';
+import LoadingScreen from '@/components/loading-screen/LoadingScreen';
 
 const cookieName: string = '__theme__';
 const defaultContext: UseThemeProps = { changeTheme: () => {} };
@@ -45,7 +46,7 @@ export function ThemeProvider({
   };
 
   if (!mounted) {
-    return <>Loading...</>;
+    return <LoadingScreen />;
   }
 
   return <ThemeContext.Provider value={{ theme, changeTheme }}>{children}</ThemeContext.Provider>;
